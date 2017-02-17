@@ -8,10 +8,6 @@ T AddTwoNums(T first, T second)
 }
 int main()
 {
-
-
     cout << AddTwoNums(2.5,3.4) << endl;
-
     cout << AddTwoNums(12,38);
-
 }
