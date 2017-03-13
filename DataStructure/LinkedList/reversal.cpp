@@ -18,6 +18,8 @@ Node* reverseLinkedList(Node* head)
     }
 
     head = prev;
+
+    return head;
 }
 int main()
 {
