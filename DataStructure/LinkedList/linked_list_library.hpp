@@ -27,6 +27,18 @@ public:
         }
     }
 
+    int countNodes(Node* head)
+    {
+        Node *start = head;
+        int count = 0;
+        while(start)
+        {
+            count++;
+            start = start->next;
+        }
+        return count;
+    }
+
     Node* insert(Node* head, int data)
     {
         Node* newNode = new Node(data);
