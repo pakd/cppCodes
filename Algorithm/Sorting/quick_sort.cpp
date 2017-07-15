@@ -7,24 +7,34 @@ void quicksort(int arr[],int l, int r)
         return;
     }
     int pivot=partition(arr,l,r);
-    quicksort(arr,l,pivot-1);
+    quicksort(arr,l,pivot);
     quicksort(arr,pivot+1,r);
 }
 int partition(int arr[],int l, int r)
 {
-    int key=arr[r];
-    int i=l,j=r;
-    while(i<j)
+    int key=arr[l];
+    int i=l-1,j=r+1;
+    while(1)
     {
-        while(arr[i]<key) i++;
-        while(arr[j]>key) j--;
-        if(i<j) swap(arr[i],arr[j]);
+         do
+        {
+            i++;
+        } while (arr[i] < key);
+  
+        do
+        {
+            j--;
+        } while (arr[j] > key);
+        
+         if(i>=j)
+    		return j;
+         swap(arr[i],arr[j]);
     }
-    return j;
+   
 }
 int main()
 {
-    int arr[]= {9,100,7,6,-1,4,3,2,234};
+    int arr[]= {9,100,7,6,-1,4,3,2,4};
     int n=9;
     quicksort(arr,0,8);
     for(int i=0; i<n; i++)
