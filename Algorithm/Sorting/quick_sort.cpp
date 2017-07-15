@@ -13,14 +13,17 @@ void quicksort(int arr[],int l, int r)
 int partition(int arr[],int l, int r)
 {
     int key=arr[r];
-    int i=l,j=r;
-    while(i<j)
+    int i = l-1;
+    for(int j=l;j<r;j++)
     {
-        while(arr[i]<key) i++;
-        while(arr[j]>key) j--;
-        if(i<j) swap(arr[i],arr[j]);
+        if(arr[j]<=key)
+        {
+         i++;
+         swap(arr[i],arr[j]);
+        }
     }
-    return j;
+    swap(arr[i+1],arr[r]);
+    return i+1;
 }
 int main()
 {
