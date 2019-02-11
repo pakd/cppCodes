@@ -7,7 +7,7 @@ int main()
     BasicTree myTree;
     Node* root = NULL;
 
-    vector<int>  dpk{10,6,14,3,8,12,16,15,18};
+    vector<int>  dpk{10,6,14,3,8,12,16,18,15};
     for(int i=0; i< dpk.size();i++)
     {
 
