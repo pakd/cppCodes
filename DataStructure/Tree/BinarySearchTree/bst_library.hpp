@@ -1,4 +1,5 @@
 #include <iostream>
+#include <queue>
 using namespace std;
 
 class Node
@@ -26,6 +27,22 @@ public:
         displayInorder(root->left);
         cout << root->data << "\t";
         displayInorder(root->right);
+    }
+
+    void displayLevelOrder(Node* root)
+    {
+        if(!root) return;
+        queue<Node*> Q;
+        Q.push(root);
+        while(!Q.empty())
+        {
+            Node* curr = Q.front();
+            if(curr->left) Q.push(curr->left);
+            if(curr->right) Q.push(curr->right);
+            cout << curr->data << " ";
+            Q.pop();
+
+        }
     }
 
    /* int countNodes(Node* root)
@@ -64,7 +81,6 @@ public:
         }
         else
         {
-
             xUp->right = newNode;
         }
 
