@@ -19,18 +19,18 @@ class BasicTree
 {
 public:
 
-    void displayInorder(Node* head)
+    void displayInorder(Node* root)
     {
-        if(!head)
+        if(!root)
             return;
-        displayInorder(head->left);
-        cout << head->data << "\t";
-        displayInorder(head->right);
+        displayInorder(root->left);
+        cout << root->data << "\t";
+        displayInorder(root->right);
     }
 
-   /* int countNodes(Node* head)
+   /* int countNodes(Node* root)
     {
-        Node *start = head;
+        Node *start = root;
         int count = 0;
         while(start)
         {
@@ -40,18 +40,18 @@ public:
         return count;
     }*/
 
-    Node* insert(Node* head, int key)
+    Node* insert(Node* root, int key)
     {
         Node* newNode = new Node(key);
-        if(head == NULL)
+        if(root == NULL)
         {
-            head = newNode;
-            return head;
+            root = newNode;
+            return root;
         }
-        Node *itr = head;
+        Node *itr = root;
 
-        Node *xUp = head;
-        Node *xDown = head;
+        Node *xUp = root;
+        Node *xDown = root;
 
         while(xDown)
         {
@@ -68,8 +68,17 @@ public:
             xUp->right = newNode;
         }
 
-        return head;
+        return root;
 
+    }
+
+    int getHeight(Node* root)
+    {
+        if(!root) return 0;
+        int leftHeight = getHeight(root->left);
+        int rightHeight = getHeight(root->right);
+        int maxHeight = (leftHeight > rightHeight)?leftHeight:rightHeight;
+        return maxHeight + 1;
     }
 
 };
