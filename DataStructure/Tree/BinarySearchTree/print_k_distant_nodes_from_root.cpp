@@ -25,12 +25,13 @@ int main()
     Node* root = NULL;
 
     vector<int>  dpk{20,10,30,5,15,40};
+
     for(int i=0; i< dpk.size();i++)
     {
 
         root = myTree.insert(root, dpk[i]);
     }
-    printKNodesFromRoot(root, 2);
+    printKNodesFromRoot(root, 3);
 
     return 0;
 }
