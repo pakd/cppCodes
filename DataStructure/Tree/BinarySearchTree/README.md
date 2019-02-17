@@ -12,7 +12,7 @@
 		* [Levelorder reverse](https://www.geeksforgeeks.org/reverse-level-order-traversal/)
 		* [Levelorder from left and right side alternatively](https://www.geeksforgeeks.org/perfect-binary-tree-specific-level-order-traversal/)
 * Morris: without stack and recrusive
-	* [Inorder](https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/0
+	* [Inorder](https://www.geeksforgeeks.org/inorder-tree-traversal-without-recursion-and-without-stack/)
 	* [Preorder](https://www.geeksforgeeks.org/morris-traversal-for-preorder/)
 
 > Views
