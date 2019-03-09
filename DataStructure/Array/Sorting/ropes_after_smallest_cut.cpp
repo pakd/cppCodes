@@ -2,9 +2,6 @@
 #include <algorithm>
 using namespace std;
 
-
-
-
 void ropes_after_smallest_cut(int *arr, int n)
 {
     sort(arr, arr + n);
@@ -20,7 +17,6 @@ void ropes_after_smallest_cut(int *arr, int n)
     }
 
 }
-
 
 int main()
 {
