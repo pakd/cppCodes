@@ -39,5 +39,5 @@ int main()
     int size = sizeof(arr)/sizeof(arr[0]);
     int k = 4;
     cout << pairs_with_diff_k(arr, size, k);
-
+    return 0;
 }
