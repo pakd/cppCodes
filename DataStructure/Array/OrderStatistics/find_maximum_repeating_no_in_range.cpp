@@ -28,7 +28,7 @@ int maxRepeatingNo(int *arr, int n, int k)
     return result;
 }
 
-/* Driver code */int main()
+int main()
 {
     int arr[] = {2, 3, 3, 5, 3, 4, 1, 7};
     int n = sizeof(arr)/sizeof(arr[0]);
