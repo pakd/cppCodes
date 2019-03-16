@@ -1,6 +1,7 @@
 #include <iostream>
 using namespace std;
 
+// maximum j - i such that arr[j] > arr[i]
 int maxIndexDiff(int *arr, int n)
 {
     int leftMin[n], rightMax[n];
