@@ -7,7 +7,7 @@ int maxIndexDiff(int *arr, int n)
     int leftMin[n], rightMax[n];
 
     leftMin[0] = arr[0];
-    for(int i=0;i<n;i++)
+    for(int i=1;i<n;i++)
     {
         leftMin[i] = min(arr[i], leftMin[i-1]);
     }
