@@ -46,6 +46,7 @@
 * [All path from root to leaf](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/print_all_paths_from_root_to_leaf.cpp)
 * [K distant nodes from root](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/print_k_distant_nodes_from_root.cpp)
 * [K distant nodes from any node](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/print_nodes_at_k_distance_from_node_x.cpp)
+* [Check if a given BT has a subtree with equal no of 0s and 1s](https://www.geeksforgeeks.org/check-if-the-given-binary-tree-have-a-subtree-with-equal-no-of-1s-and-0s/)
 
 > Finding in BST
 * [LCA](https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/)
