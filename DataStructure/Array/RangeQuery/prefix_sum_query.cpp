@@ -31,4 +31,6 @@ int main()
 
     cout << sumQuery(arr, size, 0 , 3  );
 
+    return 0;
+
 }
