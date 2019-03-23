@@ -23,7 +23,7 @@ int ceiling_search(int *arr, int low, int high, int key)
     }
     else
     {
-        if( arr[mid-1] >=low && arr[mid-1] < key)
+        if( mid-1 >=low && arr[mid-1] < key)
             return mid;
         return ceiling_search(arr, low, mid -1, key);
 
