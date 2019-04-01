@@ -17,7 +17,7 @@ void pushStack(int elem)
 int popStack()
 {
     int temp = st.top();
-    if(st.top() == minSt.top())
+    if(temp == minSt.top())
     {
         st.pop();
         minSt.pop();
@@ -26,6 +26,7 @@ int popStack()
     {
         st.pop();
     }
+    return temp;
 }
 
 int getMin()
@@ -47,23 +48,23 @@ int main()
     pushStack(20);
     pushStack(30);
 
-    cout  << getMin() << endl;
+    cout  << getMin() << endl; // 10
 
     pushStack(5);
     pushStack(50);
 
-    cout  << getMin() << endl;
+    cout  << getMin() << endl; // 5
 
     popStack();
     popStack();
 
-    cout  << getMin() << endl;
+    cout  << getMin() << endl; // 10
 
     popStack();
     popStack();
     popStack();
 
-    cout  << getMin() << endl;
+    cout  << getMin() << endl; // -1
 
     return 0;
 }
