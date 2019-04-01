@@ -6,4 +6,6 @@
 * [Implement stack using priority queue](https://www.geeksforgeeks.org/implement-stack-using-priority-queue-or-heap/)
 * [Implement customized data stack with all 0(1) opetaions](https://www.geeksforgeeks.org/create-customized-data-structure-evaluates-functions-o1/)
 
+> Standard Problems
+* [Infix to Postfix](https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/)
 
