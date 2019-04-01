@@ -8,4 +8,7 @@
 
 > Standard Problems
 * [Infix to Postfix](https://www.geeksforgeeks.org/stack-set-2-infix-to-postfix/)
+* [Postfix to Infix](https://www.geeksforgeeks.org/postfix-to-infix/)
+* [Prefix to Postfix](https://www.geeksforgeeks.org/prefix-postfix-conversion/)
+* [Postfix to Prefix](https://www.geeksforgeeks.org/postfix-prefix-conversion/)
 
