@@ -4,5 +4,6 @@
 * [Implement stack using 2 queues](https://www.geeksforgeeks.org/implement-stack-using-queue/)
 * [Implement stack using single queue](https://www.geeksforgeeks.org/implement-a-stack-using-single-queue/)
 * [Implement stack using priority queue](https://www.geeksforgeeks.org/implement-stack-using-priority-queue-or-heap/)
+* [Implement customized data stack with all 0(1) opetaions](https://www.geeksforgeeks.org/create-customized-data-structure-evaluates-functions-o1/)
 
 
