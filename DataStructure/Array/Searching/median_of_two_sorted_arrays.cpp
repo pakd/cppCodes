@@ -23,13 +23,13 @@ double findMedianSortedArrays(int *arr1, int n, int *arr2, int m)
         if(maxLeftX <= minRightY && maxLeftY <= minRightX)
         {
 
-            // odd length
+            // even length
             if((m+n)%2 ==0)
             {
                 return (double)(max(maxLeftX, maxLeftY) + min(minRightX,minRightY))/2;
             }
 
-            // even length
+            // odd length
             else
                 return max(maxLeftX, maxLeftY);
         }
