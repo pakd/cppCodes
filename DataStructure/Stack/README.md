@@ -11,4 +11,6 @@
 * [Postfix to Infix](https://www.geeksforgeeks.org/postfix-to-infix/)
 * [Prefix to Postfix](https://www.geeksforgeeks.org/prefix-postfix-conversion/)
 * [Postfix to Prefix](https://www.geeksforgeeks.org/postfix-prefix-conversion/)
+* [Check for balanced parentheses in an expression](https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/)
+* [Evaluation of Postfix Expression](https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/)
 
