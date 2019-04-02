@@ -13,4 +13,5 @@
 * [Postfix to Prefix](https://www.geeksforgeeks.org/postfix-prefix-conversion/)
 * [Evaluation of Postfix Expression](https://www.geeksforgeeks.org/stack-set-4-evaluation-postfix-expression/)
 * [Check for balanced parentheses in an expression](https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/)
+* [Celebrity problem using two pointers or no extra space](https://www.geeksforgeeks.org/the-celebrity-problem/)
 
