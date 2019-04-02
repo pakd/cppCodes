@@ -33,9 +33,7 @@ int main()
     st.push(i++);
     st.push(i++);
 
-    int n = 7;
-
-    deleteMiddleElem( st.size(),  n);
+    deleteMiddleElem( st.size(),  st.size());
 
     while(!st.empty())
     {
