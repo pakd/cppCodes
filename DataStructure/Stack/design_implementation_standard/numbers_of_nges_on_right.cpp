@@ -26,7 +26,7 @@ void next_greater(int *arr, int n, int *next)
 
 int countNGEs(int *arr, int *next, int *dp, int n)
 {
-    dp[n-1] = -1;
+    dp[n-1] = 0; // this won't trigger anytime as next[n-1] is always -1.
     for(int i= n - 2; i >=0 ; i--)
     {
         if(next[i] == -1)
