@@ -15,3 +15,6 @@
 * [Check for balanced parentheses in an expression](https://www.geeksforgeeks.org/check-for-balanced-parentheses-in-an-expression/)
 * [Celebrity problem using two pointers or no extra space](https://www.geeksforgeeks.org/the-celebrity-problem/)
 
+> Misc
+* [Check mirror in two n-ary trees](https://www.geeksforgeeks.org/check-mirror-n-ary-tree/)
+
