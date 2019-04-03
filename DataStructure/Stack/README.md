@@ -17,4 +17,5 @@
 
 > Misc
 * [Check mirror in two n-ary trees](https://www.geeksforgeeks.org/check-mirror-n-ary-tree/)
+* [Minimum number of bracket reversals needed to make an expression balanced](https://www.geeksforgeeks.org/minimum-number-of-bracket-reversals-needed-to-make-an-expression-balanced/)
 
