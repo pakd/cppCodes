@@ -19,4 +19,5 @@
 * [Check mirror in two n-ary trees](https://www.geeksforgeeks.org/check-mirror-n-ary-tree/)
 * [Minimum number of bracket reversals needed to make an expression balanced](https://www.geeksforgeeks.org/minimum-number-of-bracket-reversals-needed-to-make-an-expression-balanced/)
 * [Find maximum depth of nested parenthesis in a string](https://www.geeksforgeeks.org/find-maximum-depth-nested-parenthesis-string/)
-
+* [Find if an expression has duplicate parenthesis or not](https://www.geeksforgeeks.org/find-expression-duplicate-parenthesis-not/)
+* [Bubble sort using two Stacks](https://www.geeksforgeeks.org/bubble-sort-using-two-stacks/)
