@@ -22,3 +22,4 @@
 * [Find index of closing bracket for a given opening bracket in an expression](https://www.geeksforgeeks.org/find-index-closing-bracket-given-opening-bracket-expression/)
 * [Find if an expression has duplicate parenthesis or not](https://www.geeksforgeeks.org/find-expression-duplicate-parenthesis-not/)
 * [Bubble sort using two Stacks](https://www.geeksforgeeks.org/bubble-sort-using-two-stacks/)
+* [Find next Smaller of next Greater in an array](https://www.geeksforgeeks.org/find-next-smaller-next-greater-array/)
