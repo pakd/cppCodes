@@ -7,5 +7,5 @@
 * [Construct Complete Binary Tree from its Linked List Representation](https://www.geeksforgeeks.org/given-linked-list-representation-of-complete-tree-convert-it-to-linked-representation/)
 
 > Misc
-*[Find the largest multiple of 3 (only read)](https://www.geeksforgeeks.org/find-the-largest-number-multiple-of-3/)
+* [Find the largest multiple of 3 (only read logic of multiple of 3)](https://www.geeksforgeeks.org/find-the-largest-number-multiple-of-3/)
 
