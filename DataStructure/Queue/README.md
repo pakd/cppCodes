@@ -8,5 +8,5 @@
 
 > Misc
 * [Find the largest multiple of 3 (only read logic for multiple of 3)](https://www.geeksforgeeks.org/find-the-largest-number-multiple-of-3/)
-
 * [Queue based approach for first non-repeating character in a stream](https://www.geeksforgeeks.org/queue-based-approach-for-first-non-repeating-character-in-a-stream/)
+* [Minimum sum of squares of character counts in a given string after removing k characters](https://www.geeksforgeeks.org/minimum-sum-squares-characters-counts-given-string-removing-k-characters/)
