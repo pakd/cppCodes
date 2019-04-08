@@ -9,3 +9,4 @@
 > Misc
 * [Find the largest multiple of 3 (only read logic for multiple of 3)](https://www.geeksforgeeks.org/find-the-largest-number-multiple-of-3/)
 
+* [Queue based approach for first non-repeating character in a stream](https://www.geeksforgeeks.org/queue-based-approach-for-first-non-repeating-character-in-a-stream/)
