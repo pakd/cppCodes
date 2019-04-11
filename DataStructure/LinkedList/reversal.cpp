@@ -32,4 +32,5 @@ int main()
     head = reverseLinkedList(head);
     myList.display(head);
 
+    return 0;
 }

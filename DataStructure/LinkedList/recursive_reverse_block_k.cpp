@@ -44,4 +44,5 @@ int main()
     head = reverseLinkedList(head,3);
     myList.display(head);
 
+    return 0;
 }
