@@ -90,11 +90,11 @@ public:
 
 int main()
 {
-    // create the graph given in above fugure
+
     int V = 9;
     Graph g(V);
 
-    //  making above shown graph
+
     g.addEdge(0, 1, 4);
     g.addEdge(0, 7, 8);
     g.addEdge(1, 2, 8);
