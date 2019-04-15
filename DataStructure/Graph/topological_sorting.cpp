@@ -4,6 +4,13 @@
 
 using namespace std;
 
+/*
+* Applications of topological sort
+* 1. Build Systems
+* 2. Advance packaging tools(apt-get in linux)
+* 3. Task scheduling
+* 4. Pre-requisite problems
+*/
 
 class Graph
 {
