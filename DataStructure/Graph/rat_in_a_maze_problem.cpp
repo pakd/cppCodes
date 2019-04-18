@@ -55,7 +55,7 @@ bool solveMazeUtil(int maze[N][N], int x, int y, int sol[N][N])
          /* If none of the above movements work then BACKTRACK:
             unmark x,y as part of solution path */
         sol[x][y] = 0;
-        false;
+        return false;
     }
 }
 
