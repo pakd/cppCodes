@@ -23,29 +23,26 @@ public:
         }
     }
 
+    // directed graph
     void addEdge(int v, int w)
     {
         adj[v].push_back(w);
     }
 
-
-
     void DFS(int s)
     {
         // visited array
-
         visited[s] = true;
 
         cout << s << " ";
 
-        for(auto i = adj[s].begin(); i!=adj[s].end(); i++)
+        for(auto i : adj[s])
         {
-            if(!visited[*i])
+            if(!visited[i])
             {
-                DFS(*i);
+                DFS(i);
             }
         }
-
     }
 };
 

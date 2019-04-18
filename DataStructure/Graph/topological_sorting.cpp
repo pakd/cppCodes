@@ -31,12 +31,13 @@ public:
         }
     }
 
+    // directed graph
     void addEdge(int v, int w)
     {
         adj[v].push_back(w);
     }
 
-    topologicalSortUtil(int s, stack<int> &st)
+    void topologicalSortUtil(int s, stack<int> &st)
     {
         visited[s] = true;
 
