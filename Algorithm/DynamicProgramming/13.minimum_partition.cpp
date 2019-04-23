@@ -2,8 +2,14 @@
 
 using namespace std;
 
-bool isSubsetSum(int *input, int n, int sum)
+int findMinDiff(int *input, int n)
 {
+    int sum = 0;
+    for(int i=0; i<n; i++)
+    {
+        sum += input[i];
+    }
+
     bool dp[n+1][sum+1];
 
     for(int i=0; i<=n; i++)
@@ -36,17 +42,25 @@ bool isSubsetSum(int *input, int n, int sum)
         }
     }
 
-    return dp[n][sum];
+    int diff = INT_MAX;
+
+    for(int j=sum/2; j>=0; j--)
+    {
+        if(dp[n][j])
+        {
+            diff = sum-2*j;
+            break;
+        }
+    }
+
+    return diff;
 }
 
 int main()
 {
-  int arr[] = {3, 34, 4, 12, 5, 2};
-  int sum = 9;
+  int arr[] = {3, 1, 4, 2, 2, 1}; // ans = 1
+  // int arr[] = {11, 4, 4}; // ans = 3
   int n = sizeof(arr)/sizeof(arr[0]);
-  if (isSubsetSum(arr, n, sum) == true)
-     cout << "Found a subset with given sum";
-  else
-     cout << "No subset with given sum";
+  cout << "The minimum difference between 2 sets is " << findMinDiff(arr, n);
   return 0;
 }
