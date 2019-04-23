@@ -44,6 +44,8 @@ int findMinDiff(int *input, int n)
 
     int diff = INT_MAX;
 
+    // Find the largest j such that dp[n][j]
+    // is true where j loops from sum/2 t0 0
     for(int j=sum/2; j>=0; j--)
     {
         if(dp[n][j])
