@@ -9,6 +9,7 @@ public:
     Trie* children[ALPHABET_SIZE];
     Trie()
     {
+
         isLeaf = false;
         for(int i=0; i<ALPHABET_SIZE; i++)
         {
@@ -56,40 +57,38 @@ public:
         return curr->isLeaf; // check last node as word or not
     }
 
-    bool haveOnlyOneChildren(Trie* node)
+    string getLongestPrefix(string key)
     {
-        int count = 0;
-        for(int i=0; i<ALPHABET_SIZE; i++)
-        {
-            if(node->children[i])
-            {
-                count++;
-            }
-        }
-        return count==1?true:false;
-    }
-
-    string getLongestCommonPrefix(string key)
-    {
-
         string ans = "";
-        if(this == NULL) // if trie is empty
+        string prevMatch = "";
+
+        // if trie is empty
+        if(this == NULL)
         {
-            return ans;
+            return "";
         }
 
         Trie* curr = this;
 
+
         for(auto it : key)
         {
             int index = it - 'a';
-            if(haveOnlyOneChildren(curr))
+            if(curr->children[index] == NULL )
             {
-                curr = curr->children[index];
-                ans += it;
+                return prevMatch;
+            }
+
+            ans += it;
+
+
+            curr = curr->children[index];
+            if(curr->isLeaf)
+            {
+                prevMatch = ans;
             }
         }
-        return ans;
+        return prevMatch;
     }
 
 
@@ -99,7 +98,7 @@ public:
 int main()
 {
 
-    string words[] = {"geeksforgeeks", "geeks", "geek", "geezer"}; // ans = "gee"
+    string words[] = {"are", "area", "base", "cat", "cater", "children", "basement"};
 
     Trie* head = new Trie(); // head node
 
@@ -108,7 +107,13 @@ int main()
         head->insert(wordsIt);
     }
 
-    cout << head->getLongestCommonPrefix(words[0]); // pass any string to function
+    string wordsCheck[] = {"caterer", "basement", "are", "arex", "basemexz", "xyx", "catex"};
+
+
+    for (auto wordsIt : wordsCheck)
+    {
+        cout << wordsIt << " : " << head->getLongestPrefix(wordsIt) << endl;
+    }
 
 
     return 0;
