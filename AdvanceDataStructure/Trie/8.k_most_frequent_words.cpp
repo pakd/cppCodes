@@ -21,7 +21,6 @@ public:
 
     void insert(string key)
     {
-        //cout << "insert" << endl << key << endl;
         Trie* curr = this; // start from root node
 
         for(auto it : key)
@@ -34,10 +33,8 @@ public:
             curr = curr->children[index];
         }
 
-        // mark last node as leaf
         curr->isLeaf = true;
         curr->frequency++;
-        //cout << curr->frequency << endl;
     }
 
     priority_queue<pair<int, string>> pq;
@@ -50,15 +47,13 @@ public:
         }
         if(node->isLeaf)
         {
-            cout << prefix << endl;
             pq.push({node->frequency, prefix});
         }
         for(int i=0; i < ALPHABET_SIZE; i++)
         {
-            prefix += char(i + 'a');
             if(node->children[i])
             {
-                displayAllNodes(node->children[i], prefix);
+                displayAllNodes(node->children[i], prefix + char(i + 'a'));
             }
         }
     }
@@ -82,6 +77,7 @@ vector<string> separateWords(string input)
             word += tolower(x);
         }
     }
+    ret.push_back(word); // push last word
     return ret;
 }
 int main()
@@ -94,7 +90,6 @@ int main()
 
     for(int i=0;i < bookParsed.size(); i++)
     {
-        cout << bookParsed[i] << endl;
         head->insert(bookParsed[i]);
     }
 
