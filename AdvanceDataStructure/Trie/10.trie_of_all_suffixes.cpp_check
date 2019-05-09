@@ -1,0 +1,116 @@
+#include <iostream>
+#include <list>
+using namespace std;
+
+#define ALPHABET_SIZE 26
+class Trie
+{
+public:
+    bool isLeaf;
+    list<int> indexes;
+    Trie* children[ALPHABET_SIZE];
+    Trie()
+    {
+        isLeaf = false;
+        for(int i=0; i<ALPHABET_SIZE; i++)
+        {
+            children[i] = NULL;
+        }
+    }
+
+    void insert(string key, int index)
+    {
+        cout << key << endl;
+        Trie* curr = this; // start from root node
+
+        for(auto it : key)
+        {
+            int index = it - 'a';
+            if(curr->children[index] == NULL )
+            {
+                curr->children[index] = new Trie();
+            }
+            curr = curr->children[index];
+        }
+
+        // mark last node as leaf
+        curr->isLeaf = true;
+        curr->indexes.push_back(index);
+
+    }
+
+
+    void insertAll(string key, int index)
+    {
+        for(int i=0; i<key.length(); i++)
+        {
+            insert(key.substr(i), index + i);
+        }
+    }
+
+    void insertAllSuffixes(string key)
+    {
+        for(int i=0; i<key.length(); i++)
+        {
+            insertAll(key.substr(i), i);
+        }
+    }
+
+    bool search(string key)
+    {
+        cout << "search " << key << endl;
+        if(this == NULL) // if trie is empty
+        {
+            return false;
+        }
+
+        Trie* curr = this;
+
+        for(auto it : key)
+        {
+            int index = it - 'a';
+            if(curr->children[index] == NULL )
+            {
+                return false;
+            }
+            curr = curr->children[index];
+        }
+
+
+        for(auto x : curr->indexes)
+        {
+            cout << x << "\t";
+        }
+        cout << endl;
+        return curr->isLeaf; // check last node as word or not
+    }
+};
+
+
+int main()
+{
+    Trie* head = new Trie(); // head node
+
+    // Let us build a suffix trie for text "geeksforgeeks.org"
+    string txt = "geeksforgeeks.org";
+
+    head->insertAllSuffixes(txt);
+
+    head->search("ee");
+
+    /*cout << "Search for 'ee'" << endl;
+    S.search("ee");
+
+
+    cout << "\nSearch for 'geek'" << endl;
+    S.search("geek");
+
+    cout << "\nSearch for 'quiz'" << endl;
+    S.search("quiz");
+
+    cout << "\nSearch for 'forgeeks'" << endl;
+    S.search("forgeeks");
+    */
+
+    return 0;
+}
