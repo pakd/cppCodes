@@ -1,5 +1,5 @@
 #include <iostream>
-#include <list>
+#include <set>
 using namespace std;
 
 #define ALPHABET_SIZE 26
@@ -7,7 +7,7 @@ class Trie
 {
 public:
     bool isLeaf;
-    list<int> indexes;
+    set<int> indexes;
     Trie* children[ALPHABET_SIZE];
     Trie()
     {
@@ -18,9 +18,9 @@ public:
         }
     }
 
-    void insert(string key, int index)
+    void insert(string key, int ind)
     {
-        cout << key << endl;
+        //cout << key << endl;
         Trie* curr = this; // start from root node
 
         for(auto it : key)
@@ -30,12 +30,14 @@ public:
             {
                 curr->children[index] = new Trie();
             }
+            curr->indexes.insert(ind);
             curr = curr->children[index];
+
         }
 
         // mark last node as leaf
         curr->isLeaf = true;
-        curr->indexes.push_back(index);
+        curr->indexes.insert(ind); // for last
 
     }
 
@@ -58,7 +60,7 @@ public:
 
     bool search(string key)
     {
-        cout << "search " << key << endl;
+        cout << "search key: " << key << endl;
         if(this == NULL) // if trie is empty
         {
             return false;
@@ -96,7 +98,10 @@ int main()
 
     head->insertAllSuffixes(txt);
 
-    head->search("ee");
+   // head->search("ee");
+
+    cout << endl;
+    head->search("geek");
 
     /*cout << "Search for 'ee'" << endl;
     S.search("ee");
