@@ -98,24 +98,10 @@ int main()
 
     head->insertAllSuffixes(txt);
 
-   // head->search("ee");
-
-    cout << endl;
-    head->search("geek");
-
-    /*cout << "Search for 'ee'" << endl;
-    S.search("ee");
-
-
-    cout << "\nSearch for 'geek'" << endl;
-    S.search("geek");
-
-    cout << "\nSearch for 'quiz'" << endl;
-    S.search("quiz");
-
-    cout << "\nSearch for 'forgeeks'" << endl;
-    S.search("forgeeks");
-    */
+    head->search("geek"); // 0 8
+    head->search("forgeeks");
+    head->search("quiz"); // nil
+    head->search("ee"); // 1 9
 
     return 0;
 }
