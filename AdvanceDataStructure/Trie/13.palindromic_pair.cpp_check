@@ -1,0 +1,174 @@
+#include <iostream>
+#include <vector>
+#include <algorithm>
+using namespace std;
+
+#define ALPHABET_SIZE 26
+class Trie
+{
+public:
+    bool isLeaf;
+    Trie* children[ALPHABET_SIZE];
+    int wordIndex = 0;
+    Trie()
+    {
+        isLeaf = false;
+        for(int i=0; i<ALPHABET_SIZE; i++)
+        {
+            children[i] = NULL;
+        }
+    }
+
+    // only insert reverse strings
+    // i for not matching same strings
+    void insert(string key, int i)
+    {
+        cout << "insert: " << key << endl;
+        Trie* curr = this; // start from root node
+
+        for(auto it : key)
+        {
+            int index = it - 'a';
+            if(curr->children[index] == NULL )
+            {
+                curr->children[index] = new Trie();
+            }
+            curr = curr->children[index];
+        }
+
+        // mark last node as leaf
+        curr->isLeaf = true;
+        curr->wordIndex = i;
+    }
+
+    bool search(string key, Trie* lastNode, int i)
+    {
+        cout << "search : " << key << endl;
+        if(this == NULL) // if trie is empty
+        {
+            return false;
+        }
+
+        Trie* curr = this;
+
+        for(auto it : key)
+        {
+            int index = it - 'a';
+            if(curr->children[index] == NULL )
+            {
+                return false;
+            }
+            curr = curr->children[index];
+        }
+
+        lastNode = curr;
+
+        if(i != curr->wordIndex) // to check if we are not matching same word.
+        {
+            return curr->isLeaf; // check last node as word or not
+        }
+        return false;
+
+
+    }
+
+    //get all string in case of no complete match by recursive search
+    bool getAllStringsBelow(Trie* lastNode)
+    {
+        vector<string> ret;
+        traverseAllNodesBelow(lastNode, ret, "");
+
+        for(auto x : ret)
+        {
+            if(isPalindromeString(x))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+
+
+    void traverseAllNodesBelow(Trie* node,vector<string>& vect, string prefix)
+    {
+        if(node == NULL)
+        {
+            return;
+        }
+        if(node->isLeaf)
+        {
+            vect.push_back(prefix);
+        }
+        for(int i=0; i < ALPHABET_SIZE; i++)
+        {
+            if(node->children[i])
+            {
+                traverseAllNodesBelow(node->children[i], vect, prefix + char(i + 'a'));
+            }
+        }
+    }
+
+    bool isPalindrome(vector<string>& words)
+    {
+        int i = 0;
+        for(auto x : words)
+        {
+            Trie* lastNode;
+            string check = "";
+            bool isThere = search(x, lastNode, i++);
+            if(isThere)
+            {
+                return true;
+            }
+            else // recrusive search
+            {
+                if(getAllStringsBelow(lastNode))
+                {
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    bool isPalindromeString(string str)
+    {
+        int len = str.length();
+
+        int i = 0;
+        int j  = len - 1;
+
+        while(i < j)
+        {
+            if(str[i] != str[j])
+            {
+                return false;
+            }
+            i++;
+            j--;
+        }
+        return true;
+    }
+};
+
+
+int main()
+{
+    Trie* head = new Trie(); // head node
+
+    vector<string> vect = {"geekf", "geeks", "or", "keeg", "abc", "bc"};
+
+    // inserting reverse of strings
+    int i = 0;
+    for( auto x : vect)
+    {
+        string temp = x;
+
+        reverse(temp.begin(), temp.end());
+        head->insert(temp, i++);
+    }
+
+    head->isPalindrome(vect)? cout << "Yes" : cout << "No";
+
+    return 0;
+}
