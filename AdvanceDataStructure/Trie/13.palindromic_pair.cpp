@@ -23,7 +23,6 @@ public:
     // i for not matching same strings
     void insert(string key, int i)
     {
-        cout << "insert: " << key << endl;
         Trie* curr = this; // start from root node
 
         for(auto it : key)
@@ -41,9 +40,10 @@ public:
         curr->wordIndex = i;
     }
 
-    bool search(string key, Trie* lastNode, int i)
+    bool search(string key, Trie* lastNode, int i, int& matchedLength)
     {
-        cout << "search : " << key << endl;
+        lastNode = NULL;
+        matchedLength = 0;
         if(this == NULL) // if trie is empty
         {
             return false;
@@ -58,6 +58,7 @@ public:
             {
                 return false;
             }
+            matchedLength++;
             curr = curr->children[index];
         }
 
@@ -115,14 +116,23 @@ public:
         {
             Trie* lastNode;
             string check = "";
-            bool isThere = search(x, lastNode, i++);
+            int matchedLength = 0;
+            bool isThere = search(x, lastNode, i++, matchedLength);
+
             if(isThere)
             {
                 return true;
             }
             else // recrusive search
             {
-                if(getAllStringsBelow(lastNode))
+                int xLen = x.length();
+                int xLenRequired = xLen - matchedLength;
+                string sub = x.substr(matchedLength, xLenRequired);
+                if(isPalindromeString(sub))
+                {
+                    return true;
+                }
+                if( lastNode && getAllStringsBelow(lastNode))
                 {
                     return true;
                 }
@@ -150,13 +160,22 @@ public:
         return true;
     }
 };
+/*
 
-
+ algorithm steps
+ 1. insert reverse of all words in trie;
+ 2. iterate all words again and check if it is present in trie
+    2.a complete match, return true;
+    2.b string searched length is bigger than in trie, check rest of string is palindrome or not.
+    2.c string in trie is bigger , then recursively check all substring for palindrome and return true if present.
+ */
 int main()
 {
     Trie* head = new Trie(); // head node
 
-    vector<string> vect = {"geekf", "geeks", "or", "keeg", "abc", "bc"};
+    vector<string> vect = {"geekf", "geeks", "or", "keeg", "abc", "bc"}; // yes
+    // vector<string> vect = {"deepak", "kumar", "or", "keeg", "abc", "bc"}; // no
+    // vector<string> vect = {"abc", "xyxcba", "geekst", "or", "keeg", "bc"}; // yes
 
     // inserting reverse of strings
     int i = 0;
