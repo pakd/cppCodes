@@ -36,19 +36,12 @@ public:
     }
 
 
-    void insertAll(string key)
-    {
-        for(int i=0; i<key.length(); i++)
-        {
-            insert(key.substr(i));
-        }
-    }
 
     void insertAllSuffixes(string key)
     {
         for(int i=0; i<key.length(); i++)
         {
-            insertAll(key.substr(i));
+            insert(key.substr(i));
         }
     }
 
