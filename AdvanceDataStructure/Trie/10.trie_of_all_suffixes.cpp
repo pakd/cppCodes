@@ -2,7 +2,7 @@
 #include <set>
 using namespace std;
 
-#define ALPHABET_SIZE 26
+#define ALPHABET_SIZE 27 // including dot .
 class Trie
 {
 public:
@@ -25,7 +25,7 @@ public:
 
         for(auto it : key)
         {
-            int index = it - 'a';
+            int index = (it=='.')? 26:it - 'a';
             if(curr->children[index] == NULL )
             {
                 curr->children[index] = new Trie();
@@ -62,7 +62,7 @@ public:
 
         for(auto it : key)
         {
-            int index = it - 'a';
+            int index = (it=='.')? 26:it - 'a';
             if(curr->children[index] == NULL )
             {
                 return false;
