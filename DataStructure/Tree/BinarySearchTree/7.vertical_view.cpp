@@ -28,14 +28,15 @@ void vertical_view(Node* root)
         Q.pop();
     }
 
-    //print map data;
-    map< int,vector<int> > :: iterator it;
-    for (it=hd_list.begin(); it!=hd_list.end(); it++)
+
+    // print map data
+    for (auto x : hd_list)
     {
-        for (int i=0; i<it->second.size(); ++i)
-            cout << it->second[i] << " ";
+        for (auto y : x.second)
+            cout << y << " ";
         cout << endl;
     }
+
 }
 
 void top_view()
@@ -60,7 +61,6 @@ int main()
     }
 
     vertical_view(root);
-
 
     return 0;
 }

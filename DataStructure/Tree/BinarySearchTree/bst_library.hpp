@@ -31,31 +31,22 @@ public:
 
     void displayLevelOrder(Node* root)
     {
-        if(!root) return;
+        if(!root)
+            return;
         queue<Node*> Q;
         Q.push(root);
         while(!Q.empty())
         {
             Node* curr = Q.front();
-            if(curr->left) Q.push(curr->left);
-            if(curr->right) Q.push(curr->right);
+            if(curr->left)
+                Q.push(curr->left);
+            if(curr->right)
+                Q.push(curr->right);
             cout << curr->data << " ";
             Q.pop();
 
         }
     }
-
-   /* int countNodes(Node* root)
-    {
-        Node *start = root;
-        int count = 0;
-        while(start)
-        {
-            count++;
-            start = start->next;
-        }
-        return count;
-    }*/
 
     Node* insert(Node* root, int key)
     {
@@ -88,13 +79,36 @@ public:
 
     }
 
-    int getHeight(Node* root)
+    Node* insertRecursive(Node* root, int key)
     {
-        if(!root) return 0;
-        int leftHeight = getHeight(root->left);
-        int rightHeight = getHeight(root->right);
-        int maxHeight = (leftHeight > rightHeight)?leftHeight:rightHeight;
-        return maxHeight + 1;
+        if(!root)
+        {
+            Node* newNode = new Node(key);
+            return newNode;
+        }
+
+        else if(root->data > key)
+        {
+            root->left = insertRecursive(root->left, key);
+        }
+        else
+        {
+            root->right = insertRecursive(root->right, key);
+        }
+
+        return root;
+    }
+
+    Node* search(Node* root, int key)
+    {
+        if(!root || root->data == key)
+            return root;
+
+        else if(root->data > key)
+            return search(root->left, key);
+
+        else
+            return search(root->right, key);
     }
 
 };
