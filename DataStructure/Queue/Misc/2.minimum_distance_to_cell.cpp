@@ -71,7 +71,6 @@ void findMinDistance(int arr[][C])
 
     while(!Q.empty())
     {
-        bool flag = false;
 
         while(!isDelim(Q.front()))
         {

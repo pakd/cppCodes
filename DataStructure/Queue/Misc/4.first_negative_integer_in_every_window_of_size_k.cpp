@@ -27,7 +27,7 @@ void printFirstNegativeInteger(int *arr, int n, int k)
             cout << 0 << " ";
         }
 
-        // while out of range
+        // while negative integer is out of window
         while(!dq.empty() && dq.front() <= (i - k) )
         {
             dq.pop_front();
