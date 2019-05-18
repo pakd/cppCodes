@@ -17,20 +17,20 @@
 
 > Views
 * Horizontal
-	* [Left view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/left_and_right_view.cpp)
-	* [Right view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/left_and_right_view.cpp)
+	* [Left view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/6.left_and_right_view.cpp)
+	* [Right view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/6.left_and_right_view.cpp)
 
 * Vertical
-	* [Vertical all](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/vertical_view.cpp)
-	* [Top view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/vertical_view.cpp)
-	* [Bottom view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/vertical_view.cpp)
+	* [Vertical all](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/7.vertical_view.cpp)
+	* [Top view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/7.vertical_view.cpp)
+	* [Bottom view](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/7.vertical_view.cpp)
 	* [Diagonal top-to-bottom](https://www.geeksforgeeks.org/diagonal-traversal-of-binary-tree/)
 	
 > Simple Recursion
-* [Size](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/height_size_diameter_max.cpp)
-* [Height](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/height_size_diameter_max.cpp)
-* [Diameter](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/height_size_diameter_max.cpp)
-* [Max Element](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/height_size_diameter_max.cpp)
+* [Size](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/5.height_size_diameter_max.cpp)
+* [Height](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/5.height_size_diameter_max.cpp)
+* [Diameter](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/5.height_size_diameter_max.cpp)
+* [Max Element](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/5.height_size_diameter_max.cpp)
 * [Density](https://www.geeksforgeeks.org/density-of-binary-tree-in-one-traversal/)
 
 
@@ -41,17 +41,17 @@
 * [BST from levelorder](https://www.geeksforgeeks.org/construct-bst-given-level-order-traversal/)
 
 > Finding In BT
-* [Path to node x](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/path_to_node_x.cpp)
-* [Given Sum from root to leaf](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/root_to_leaf_given_sum.cpp)
-* [All path from root to leaf](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/print_all_paths_from_root_to_leaf.cpp)
-* [K distant nodes from root](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/print_k_distant_nodes_from_root.cpp)
-* [K distant nodes from any node](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/print_nodes_at_k_distance_from_node_x.cpp)
+* [Path to node x](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/9.path_to_node_x.cpp)
+* [Given Sum from root to leaf](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/11.root_to_leaf_given_sum.cpp)
+* [All path from root to leaf](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/8.print_all_paths_from_root_to_leaf.cpp)
+* [K distant nodes from root](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/12.print_k_distant_nodes_from_root.cpp)
+* [K distant nodes from any node](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/13.print_nodes_at_k_distance_from_node_x.cpp)
 * [Check if a given BT has a subtree with equal no of 0s and 1s](https://www.geeksforgeeks.org/check-if-the-given-binary-tree-have-a-subtree-with-equal-no-of-1s-and-0s/)
 
 > Finding in BST
 * [LCA](https://www.geeksforgeeks.org/lowest-common-ancestor-in-a-binary-search-tree/)
-* [BST to DLL](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/bst_to_dll.cpp)
-* [Finding pair of nodes with given sum](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/bst_to_dll.cpp)
+* [BST to DLL](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/14.bst_to_dll.cpp)
+* [Finding pair of nodes with given sum](https://github.com/pakd/cppCodes/blob/master/DataStructure/Tree/BinarySearchTree/14.bst_to_dll.cpp)
 
 > Miscellaneous
 * [Types of binary tree](https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/)
