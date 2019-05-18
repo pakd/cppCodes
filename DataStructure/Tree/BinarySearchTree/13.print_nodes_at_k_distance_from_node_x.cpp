@@ -37,9 +37,9 @@ bool ifPathToNodeX(Node* root, vector<Node*>& path, int x)
 
 bool isExistInPath(vector<Node*>& path, int x)
 {
-    for(int i = 0; i < path.size(); i++)
+    for(auto it : path)
     {
-        if(path[i]->data == x)
+        if(it->data == x)
             return true;
     }
     return false;
@@ -70,10 +70,10 @@ int main()
     vector<Node*> path;
     ifPathToNodeX(root, path, nodeX);
     cout << "\nPath to node X: ";
-    for(int i=0; i<path.size(); i++)
+    for(auto x : path)
     {
 
-        cout << path[i]->data << " ";
+        cout << x->data << " ";
     }
 
     // printing all nodes k distance from node x

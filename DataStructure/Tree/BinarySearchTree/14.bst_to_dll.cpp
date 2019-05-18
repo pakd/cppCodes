@@ -5,6 +5,8 @@ using namespace std;
 
 void findPairWithGivenSum(Node* head, int sumToFind);
 
+// lets do inorder way as we want a sorted list
+// double pointer with head as it will be one time only
 void convertBSTtoDLL(Node* root, Node **head)
 {
     if(!root) return;

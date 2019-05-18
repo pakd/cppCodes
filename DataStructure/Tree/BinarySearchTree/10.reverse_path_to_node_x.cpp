@@ -6,11 +6,15 @@ using namespace std;
 bool ifPathToNodeX(Node* root, vector<Node*>& path, int x)
 {
     if(!root) return false;
+
     path.push_back(root);
     if(root->data == x) return true;
+
     if(ifPathToNodeX(root->left, path, x) || ifPathToNodeX(root->right,path,x))
         return true;
+
     path.pop_back();
+
     return false;
 }
 

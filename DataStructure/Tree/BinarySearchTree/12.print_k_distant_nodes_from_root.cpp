@@ -31,7 +31,9 @@ int main()
 
         root = myTree.insert(root, dpk[i]);
     }
-    printKNodesFromRoot(root, 3);
+    // printKNodesFromRoot(root, 3); // nil
+    printKNodesFromRoot(root, 2); // 5 15 40
+    // printKNodesFromRoot(root, 1); // 10 30
 
     return 0;
 }

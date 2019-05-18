@@ -6,13 +6,16 @@ using namespace std;
 bool ifPathToNodeX(Node* root, vector<int>& path, int x)
 {
     if(!root) return false;
+
     path.push_back(root->data);
     if(root->data == x) return true;
+
     if(ifPathToNodeX(root->left, path, x) || ifPathToNodeX(root->right,path,x))
         return true;
-    path.pop_back();
-    return false;
 
+    path.pop_back();
+
+    return false;
 }
 
 
@@ -28,11 +31,10 @@ int main()
         root = myTree.insert(root, dpk[i]);
     }
     vector<int> path;
-    ifPathToNodeX(root, path,17);
-    for(int i=0;i<path.size();i++)
+    ifPathToNodeX(root, path, 17);
+    for(auto x : path)
     {
-
-        cout << path[i] << " ";
+        cout << x << " ";
     }
 
     return 0;

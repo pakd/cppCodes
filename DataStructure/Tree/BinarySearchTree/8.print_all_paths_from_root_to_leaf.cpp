@@ -1,29 +1,27 @@
 #include "bst_library.hpp"
 #include <iostream>
 #include <vector>
-#include <deque>
 
 using namespace std;
 
-deque<int> s;
-void InorderModified(Node* root)
+vector<int> vect;
+void PreorderModified(Node* root)
 {
     if(!root) return;
-    s.push_back(root->data);
-
-    InorderModified(root->left);
+    vect.push_back(root->data);
 
     if(!root->left && !root->right)
     {
-        for(int i=0;i < s.size();i++)
+        for(auto x : vect)
         {
-            cout << s[i] << "\t";
+            cout << x << "\t";
         }
         cout << endl;
     }
 
-    InorderModified(root->right);
-    s.pop_back();
+    PreorderModified(root->left);
+    PreorderModified(root->right);
+    vect.pop_back();
 
 }
 int main()
@@ -37,7 +35,7 @@ int main()
         root = myTree.insert(root, dpk[i]);
     }
 
-    InorderModified(root);
+    PreorderModified(root);
 
 
     return 0;
