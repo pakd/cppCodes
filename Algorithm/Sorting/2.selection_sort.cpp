@@ -1,9 +1,9 @@
 #include <iostream>
-using namespace std;
+
 int main()
 {
     int arr[]= {7,45,-2,4,1};
-    int n=5;
+    int n = sizeof(arr)/sizeof(arr[0]);
     int position;
 
     for(int i=0; i<n-1; i++)
@@ -16,11 +16,13 @@ int main()
                 position = j;
             }
         }
-        swap(arr[position],arr[i]);
+        std::swap(arr[position],arr[i]);
     }
 
     for(int k=0; k<n; k++)
     {
-        cout << arr[k] << " ";
+        std::cout << arr[k] << " ";
     }
+
+    return 0;
 }
