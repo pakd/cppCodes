@@ -1,13 +1,10 @@
 #include <iostream>
-using namespace std;
-
-
 
 void ReverseArray(int *arr, int l, int r)
 {
     while(l<r)
     {
-        swap(arr[l],arr[r]);
+        std::swap(arr[l],arr[r]);
         l++; r--;
     }
 }
@@ -36,16 +33,18 @@ int main()
 
     for(int i =0; i < size ; i++)
     {
-        cout << larr[i] << "\t";
+        std::cout << larr[i] << "\t";
     }
 
-    cout << endl;
+    std::cout << std::endl;
 
     int rarr[] = {1,2,3,4,5,6};
     RightRotateArray(rarr, d, size);
 
     for(int i =0; i < size ; i++)
     {
-        cout << rarr[i] << "\t";
+        std::cout << rarr[i] << "\t";
     }
+
+    return 0;
 }
