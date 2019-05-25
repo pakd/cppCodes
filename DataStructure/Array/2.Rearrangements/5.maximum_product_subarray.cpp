@@ -1,7 +1,4 @@
 #include <iostream>
-using namespace std;
-
-
 
 int maximum_product_subarray(int *arr, int n)
 {
@@ -13,8 +10,8 @@ int maximum_product_subarray(int *arr, int n)
     {
         if(arr[i] > 0)
         {
-            maxVal = max(maxVal * arr[i], 1);
-            minVal = min(minVal * arr[i], 1);
+            maxVal = maxVal * arr[i];
+            minVal = minVal * arr[i];
         }
         else if(arr[i] == 0)
         {
@@ -23,10 +20,11 @@ int maximum_product_subarray(int *arr, int n)
         }
         else
         {
-            swap(maxVal,minVal);
-            minVal = min(1, minVal * arr[i]);
-            maxVal = max(1, maxVal * arr[i]);
+            int temp = maxVal;
+            maxVal =  minVal * arr[i];
+            minVal = temp * arr[i];
         }
+
         if(maxSoFar < maxVal)
         {
             maxSoFar = maxVal;
@@ -38,8 +36,14 @@ int maximum_product_subarray(int *arr, int n)
 
 int main()
 {
-    int arr[] = {1, -2, -3, 0, 7, -8, -2};
-    int size = 7;
+    int arr[] = {1, -2, -3, 0, 7, -8, -2}; // 112
+    // int  arr[] = {6, -3, -10, 0, 2}; // 180
+    // int arr[] = {-1, -3, -10, 0, 60}; // 60
+    // int arr[] = {-2, -3, 0, -2, -40}; // 80
+    int size = sizeof(arr)/sizeof(arr[0]);
+
     int ans = maximum_product_subarray(arr, size);
-    cout << ans << endl;
+    std::cout << ans;
+
+    return 0;
 }

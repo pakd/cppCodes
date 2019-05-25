@@ -1,14 +1,9 @@
 #include <iostream>
-#include <vector>
 #include <stack>
-#include <algorithm>
-using namespace std;
 
-
-
-void form_minimum(string seq)
+void form_minimum(std::string seq)
 {
-    stack<int> st;
+    std::stack<int> st;
     for(int i=0;i<=seq.length();i++)
     {
 
@@ -17,7 +12,7 @@ void form_minimum(string seq)
         {
             while(!st.empty())
             {
-                cout << st.top() << "\t";
+                std::cout << st.top() << " ";
                 st.pop();
             }
         }
@@ -26,7 +21,8 @@ void form_minimum(string seq)
 
 int main()
 {
-    string seq = "DDIDDIID";
+    std::string seq = "DDIDDIID";
     form_minimum(seq);
+
     return 0;
 }
