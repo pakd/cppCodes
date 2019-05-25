@@ -1,6 +1,5 @@
 #include <iostream>
-#include <map>
-using namespace std;
+#include <unordered_map>
 
 void findSubArray(int *arr, int n)
 {
@@ -17,13 +16,13 @@ void findSubArray(int *arr, int n)
     }
 
     // element , index
-    map<int, int> m;
+    std::unordered_map<int, int> m;
 
     int maxVal = -1;
     int startIndex = -1;
     int endIndex = -1;
 
-    // this is helpful in getting subarrays starting from index 0
+    // this is helpful in getting sub-arrays starting from index 0
     m[0] = -1;
     for(int i=0;i<n;i++)
     {
@@ -42,11 +41,9 @@ void findSubArray(int *arr, int n)
         {
             m[sum[i]] = i;
         }
-
     }
 
-    cout << startIndex + 1 << "\t" << endIndex  << endl;
-
+    std::cout << startIndex + 1 << " " << endIndex;
 }
 int main()
 {

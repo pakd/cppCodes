@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 void calculate_frequency(int *arr, int n)
 {
@@ -18,14 +17,12 @@ void calculate_frequency(int *arr, int n)
                 int temp = arr[arr[i]];
                 arr[arr[i]] = -1;
                 arr[i] = temp;
-
             }
             else
             {
                 arr[arr[i]]--;
                 arr[i] = 0;
             }
-
         }
         else
         {
@@ -38,12 +35,13 @@ void calculate_frequency(int *arr, int n)
 int main()
 {
     int arr[] = {1,2,3,3,4,5,6,5};
-    int size = 8;
-    calculate_frequency(arr, size);
+    int size = sizeof(arr)/sizeof(arr[0]);
 
+    calculate_frequency(arr, size);
     for(int i=0;i<size;i++)
     {
-        cout << i <<"\t" << -1*arr[i] << endl;
+        std::cout << i << " " << -1*arr[i] << std::endl;
     }
+
     return 0;
 }
