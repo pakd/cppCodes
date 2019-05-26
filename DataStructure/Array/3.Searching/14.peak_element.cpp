@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int peak_element(int *arr, int low, int high, int n)
 {
@@ -27,10 +26,10 @@ int main()
     int index = peak_element(arr, 0, size - 1, size);
     if(index < 0)
     {
-        cout << "not found";
+        std::cout << "not found";
         return 0;
     }
-    cout << arr[index];
+    std::cout << arr[index];
     return 0;
 
 }

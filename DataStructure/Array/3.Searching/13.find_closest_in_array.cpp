@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cmath>
-using namespace std;
-
 
 int getClosest(int *arr, int key, int first, int second)
 {
@@ -29,7 +27,6 @@ int findClosest(int *arr, int low, int high, int key)
             return getClosest(arr, key, mid, mid+1);
         }
         return findClosest(arr, mid+1, high, key);
-
     }
     else
     {
@@ -38,7 +35,6 @@ int findClosest(int *arr, int low, int high, int key)
             return getClosest(arr, key, mid, mid-1);
         }
         return findClosest(arr, low, mid -1, key);
-
     }
 }
 
@@ -51,9 +47,9 @@ int main()
     int index = findClosest(arr, 0, size - 1, key);
     if(index < 0)
     {
-        cout << "not present" ;
+        std::cout << "not present" ;
         return 0;
     }
-    cout << arr[index];
+    std::cout << arr[index];
     return 0;
 }

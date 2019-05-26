@@ -1,6 +1,4 @@
-
 #include <iostream>
-using namespace std;
 
 int ceiling_search(int *arr, int low, int high, int key)
 {
@@ -16,14 +14,14 @@ int ceiling_search(int *arr, int low, int high, int key)
 
     else if(arr[mid] < key)
     {
-        if( mid+1 <=high && key <= arr[mid+1]) // mid+1 <= high for sanity check
+        if( mid+1 <= high && key <= arr[mid+1]) // mid+1 <= high for sanity check
             return mid+1;
         return ceiling_search(arr, mid+1, high, key);
 
     }
     else
     {
-        if( mid-1 >=low && arr[mid-1] < key)
+        if( mid-1 >= low && arr[mid-1] < key)
             return mid;
         return ceiling_search(arr, low, mid -1, key);
 
@@ -38,9 +36,9 @@ int main()
     int index = ceiling_search(arr, 0, size - 1, 11);
     if(index < 0)
     {
-        cout << "not present" ;
+        std::cout << "not present" ;
         return 0;
     }
-    cout << arr[index];
+    std::cout << arr[index];
     return 0;
 }

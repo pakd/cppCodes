@@ -1,12 +1,13 @@
 #include <iostream>
-#include <cmath>
-using namespace std;
 
-
-string min_search(int *arr, int size, int key) // total n+2 comparisons
+void min_search(int *arr, int size, int key) // total n+2 comparisons
 {
     if(arr[size-1] == key)   // 1 comparison
-        return "element found";
+    {
+        std::cout << "element found";
+        return;
+    }
+
     int temp = arr[size-1];
     arr[size-1] = key;
     for(int i=0;;i++)
@@ -16,7 +17,8 @@ string min_search(int *arr, int size, int key) // total n+2 comparisons
             arr[size - 1] = temp;
             if(i < size-1) // 1 comparison
             {
-                return "element found";
+                std::cout << "element found";
+                return;
             }
         }
     }
@@ -27,7 +29,8 @@ int main()
     int arr[] = {2, 5, 8, 11, 18, 25};
     int key = 8;
     int size = sizeof(arr)/sizeof(arr[0]);
-    cout << min_search(arr, size , key);
+
+    min_search(arr, size , key);
 
     return 0;
 }
