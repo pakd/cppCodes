@@ -1,19 +1,20 @@
 #include <iostream>
 #include <algorithm>
 #include <queue>
-using namespace std;
+#include <vector>
+
 
 void median_of_stream(double *arr,  int n)
 {
-   priority_queue<double> maxHeap;
-   priority_queue<double, vector<double>, greater<double>> minHeap;
+   std::priority_queue<double> maxHeap;
+   std::priority_queue<double, std::vector<double>, std::greater<double>> minHeap;
 
    double median = arr[0];
    maxHeap.push(arr[0]);
 
-   cout << median << endl;
+   std::cout << median << std::endl;
 
-   for(int i=1;i<n;i++)
+   for(int i=1; i<n; i++)
    {
        double x = arr[i];
        if(maxHeap.size() > minHeap.size())
@@ -62,7 +63,7 @@ void median_of_stream(double *arr,  int n)
 
            median = (maxHeap.top() + minHeap.top())/2;
        }
-       cout << median << endl;
+       std::cout << median << std::endl;
    }
 }
 
@@ -70,6 +71,7 @@ int main()
 {
     double arr[] = {5, 15, 10, 20, 3};
     int size = sizeof(arr)/sizeof(arr[0]);
+
     median_of_stream(arr, size);
 
     return 0;

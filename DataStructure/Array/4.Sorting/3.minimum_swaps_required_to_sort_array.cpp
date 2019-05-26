@@ -1,14 +1,9 @@
 #include <iostream>
 #include <algorithm>
-#include <unordered_map>
-#include <map>
-using namespace std;
-
-
 
 int min_swaps(int *arr,  int n)
 {
-    pair<int, int> pos[n];
+    std::pair<int, int> pos[n];
 
     for(int i=0;i<n;i++)
     {
@@ -16,7 +11,7 @@ int min_swaps(int *arr,  int n)
         pos[i].second = i;
     }
 
-    sort(pos, pos + n);
+    std::sort(pos, pos + n);
 
     bool vis[n] = {0};
 
@@ -49,7 +44,8 @@ int main()
 {
     int arr[] = {1,5,4,3,2};
     int size = sizeof(arr)/sizeof(arr[0]);
-    cout << min_swaps(arr, size);
+
+    std::cout << min_swaps(arr, size);
 
     return 0;
 }

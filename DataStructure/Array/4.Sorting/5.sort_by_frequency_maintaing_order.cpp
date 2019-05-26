@@ -2,9 +2,8 @@
 #include <unordered_map>
 #include <vector>
 #include <algorithm>
-using namespace std;
 
-unordered_map <int, int> indexMap;
+std::unordered_map <int, int> indexMap;
 
 /*
 1. take 2 unordered map one for storing count countMap[]
@@ -16,7 +15,7 @@ copy(countMap.begin(), countMap.end(),back_inserter(v))
 note - ignore map(normal)as it is already sorted by key value.
 */
 
-bool compare(pair<int,int>& a, pair<int,int>& b )
+bool compare(std::pair<int,int>& a, std::pair<int,int>& b )
 {
     if(a.second == b.second)
     {
@@ -27,7 +26,7 @@ bool compare(pair<int,int>& a, pair<int,int>& b )
 
 void sort_by_frequency(int *arr, int n)
 {
-    unordered_map <int, int> countMap;
+    std::unordered_map <int, int> countMap;
 
     for(int i=0; i<n; i++)
     {
@@ -38,8 +37,17 @@ void sort_by_frequency(int *arr, int n)
         }
     }
 
-    vector<pair<int,int>> v;
-    copy(countMap.begin(),countMap.end(),back_inserter(v));
+    std::vector< std::pair<int,int>> v;
+
+    copy(countMap.begin(),countMap.end(),back_inserter(v)); // equivalent to below code in comments
+
+    /*
+    for(auto it : countMap)
+    {
+        v.push_back({it.first, it.second});
+    }
+    */
+
     sort(v.begin(), v.end(), compare);
 
     int k = 0;
@@ -50,17 +58,18 @@ void sort_by_frequency(int *arr, int n)
             arr[k++] = v[i].first;
         }
     }
-
 }
 
 int main()
 {
     int arr[] = {3,2,3,1,1,2,3,2,3,5,4};
     int size = sizeof(arr)/sizeof(arr[0]);
+
     sort_by_frequency(arr, size);
+
     for(int i=0; i<size; i++)
     {
-        cout << arr[i] << "\t";
+        std::cout << arr[i] << " ";
     }
 
 }
