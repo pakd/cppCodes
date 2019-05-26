@@ -1,14 +1,19 @@
 #include <iostream>
-using namespace std;
+
 int merge (int arr[],int l, int m,int r);
+
 int mergesort(int arr[],int l, int r)
 {
-    int invCount = 0;
+
     if(l>=r)
     {
         return 0;
     }
+
     int m = (l+r)/2;
+
+    int invCount = 0;
+
     invCount = mergesort(arr,l,m);
     invCount += mergesort(arr,m+1,r);
     invCount += merge(arr,l,m,r);
@@ -66,9 +71,9 @@ int main()
      int arr[] = { 1, 20, 6, 4, 5 }; // ans = 5
     //int arr[] = {2, 4, 1, 3, 5}; // ans = 3
     int n=5;
-    cout << mergesort(arr,0,n-1) << endl ;
+    std::cout << mergesort(arr,0,n-1) << std::endl ;
     for(int i=0;i<n;i++)
     {
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
     }
 }

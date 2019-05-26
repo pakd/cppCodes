@@ -1,15 +1,14 @@
 #include <iostream>
 #include <algorithm>
-using namespace std;
 
 
 void print_array(int *arr, int n)
 {
     for(int i=0;i<n;i++)
     {
-        cout << arr[i] << " " ;
+        std::cout << arr[i] << " " ;
     }
-    cout << endl;
+    std::cout << std::endl;
 }
 
 void merge_two_array(int *arr1, int m, int *arr2, int n)
@@ -35,11 +34,15 @@ void merge_two_array(int *arr1, int m, int *arr2, int n)
 int main()
 {
     int arr1[] = {1, 5, 9, 10, 15, 20};
-    int arr2[] = {2, 3, 8, 13};
     int size1 = sizeof(arr1)/sizeof(arr1[0]);
+
+    int arr2[] = {2, 3, 8, 13};
     int size2= sizeof(arr2)/sizeof(arr2[0]);
+
     merge_two_array(arr1, size1, arr2, size2);
+
     print_array(arr1, size1);
     print_array(arr2, size2);
+
     return 0;
 }

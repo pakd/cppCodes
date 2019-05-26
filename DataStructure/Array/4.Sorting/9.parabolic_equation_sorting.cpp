@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 // if A < 0 there is one max
 // if A > 0 there is one min
@@ -65,6 +64,6 @@ int main()
 
     for(int i=0;i<n;i++)
     {
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
     }
 }
