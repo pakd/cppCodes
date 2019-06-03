@@ -1,6 +1,6 @@
 #include <iostream>
 
-std::pair<std::string, int> longest_palindromic_sequence(const std::string& test)
+std::pair<std::string, int> longest_palindromic_string(const std::string& test)
 {
     int len = test.length();
     std::string ans = "";
@@ -43,7 +43,7 @@ std::pair<std::string, int> longest_palindromic_sequence(const std::string& test
 int main()
 {
     std::string test = "banana";
-    std::pair<std::string, int> ans = longest_palindromic_sequence(test);
+    std::pair<std::string, int> ans = longest_palindromic_string(test);
     std::cout << ans.first << "\t" << ans.second;
     return 0;
 }
