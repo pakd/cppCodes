@@ -1,17 +1,15 @@
 #include <iostream>
 #include <unordered_map>
-#include <vector>
 #include <algorithm>
-using namespace std;
+#include <vector>
 
-
-unordered_map<int, vector<int>> m;
+std::unordered_map<int, std::vector<int>> m;
 
 int frequency( int L, int R , int elem)
 {
-    int a = lower_bound(m[elem].begin(), m[elem].end(), L) - m[elem].begin();
+    int a = std::lower_bound(m[elem].begin(), m[elem].end(), L) - m[elem].begin();
 
-    int b = upper_bound(m[elem].begin(), m[elem].end(), R) - m[elem].begin();
+    int b = std::upper_bound(m[elem].begin(), m[elem].end(), R) - m[elem].begin();
 
     return b - a;
 }
@@ -27,8 +25,6 @@ int main()
         m[arr[i]].push_back(i);
     }
 
-    cout << frequency(1 ,6, 8);
-
-
+    std::cout << frequency(1, 6, 8);
     return 0;
 }

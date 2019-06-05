@@ -1,6 +1,8 @@
 #include <iostream>
-using namespace std;
 
+/*
+To add V is given in range [a, b] we will add V to arr[a] and –V to arr[b+1]
+*/
 void add(int *arr, int n, int L, int R, int diff)
 {
     arr[L] += diff;
@@ -23,7 +25,7 @@ void printArr(int *arr, int n)
     update(arr, n);
     for(int i=0; i<n; i++)
     {
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
     }
 }
 

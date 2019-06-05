@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 void constructSTUtil(int *arr, int *tree, int start, int end, int treeNode )
 {
@@ -73,11 +72,11 @@ int main()
 
     for(int i=0;i<2*n-1;i++)
     {
-        cout << tree[i] << " ";
+        std::cout << tree[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
-    cout << findRangeSum(tree, 4, 6, 0, n-1, 0) << endl;
+    std::cout << findRangeSum(tree, 4, 6, 0, n-1, 0) << std::endl;
 
     int index = 5;
     arr[5] = 8;
@@ -85,7 +84,7 @@ int main()
 
     updateValue(tree, index, diff, 0 , n-1, 0);
 
-    cout << findRangeSum(tree, 4, 6, 0, n-1, 0) << endl;
+    std::cout << findRangeSum(tree, 4, 6, 0, n-1, 0) << std::endl;
 
     return 0;
 }

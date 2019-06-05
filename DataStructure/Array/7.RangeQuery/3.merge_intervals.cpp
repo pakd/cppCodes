@@ -1,7 +1,6 @@
 #include <iostream>
 #include <stack>
 #include <algorithm>
-using namespace std;
 
 struct Interval
 {
@@ -15,18 +14,18 @@ bool compare(Interval A, Interval B)
 }
 void mergeIntervals(Interval *arr, int n)
 {
-    stack<Interval> st;
+    std::stack<Interval> st;
 
-    sort(arr, arr + n, compare);
+    std::sort(arr, arr + n, compare);
 
     st.push(arr[0]);
 
-    for(int i=1; i<n;i++)
+    for(int i=1; i<n; i++)
     {
         Interval topInterval = st.top();
         if(arr[i].start <= topInterval.end)
         {
-            topInterval.end = max(arr[i].end, topInterval.end);
+            topInterval.end = std::max(arr[i].end, topInterval.end);
             st.pop();
             st.push(topInterval);
         }
@@ -39,7 +38,7 @@ void mergeIntervals(Interval *arr, int n)
     while (!st.empty())
     {
         Interval t = st.top();
-        cout << "[" << t.start << "," << t.end << "] ";
+        std::cout << "[" << t.start << "," << t.end << "] ";
         st.pop();
     }
 }
