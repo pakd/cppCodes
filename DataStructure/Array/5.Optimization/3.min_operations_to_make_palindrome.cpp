@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int findMinOps(int *arr, int n, int start, int end)
 {
@@ -30,7 +29,6 @@ int main()
 {
     int arr[] = {1, 4, 5, 1}; //   {15, 4, 15}; //   {11, 14, 15, 99};   // {1, 4, 5, 9, 1};
     int n = sizeof(arr)/sizeof(arr[0]);
-    cout << "Count of minimum operations is " <<  findMinOps(arr, n, 0, n-1) << endl;
-
+    std::cout << "Count of minimum operations is " <<  findMinOps(arr, n, 0, n-1);
     return 0;
 }

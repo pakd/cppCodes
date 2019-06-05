@@ -1,6 +1,4 @@
 #include <iostream>
-using namespace std;
-
 
 int smallestSum(int *arr, int n)
 {
@@ -15,9 +13,8 @@ int smallestSum(int *arr, int n)
 
 int main()
 {
-
     int arr[] = {1, 3, 6, 10, 11, 15};
     int n = sizeof(arr)/sizeof(arr[0]);
-    cout << smallestSum(arr, n);
+    std::cout << smallestSum(arr, n); // sum = 2 is missing
     return 0;
 }

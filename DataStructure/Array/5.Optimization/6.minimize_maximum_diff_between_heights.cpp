@@ -1,12 +1,16 @@
 #include <iostream>
 #include <algorithm>
-using namespace std;
 
+
+/*
+Either increase height or decrease by k
+then calculate diff.
+*/
 //greedy approach
 int getMinDiff(int *arr, int n, int k)
 {
 
-    sort(arr, arr + n);
+    std::sort(arr, arr + n);
 
     int small = arr[0] + k;
     int big = arr[n-1] - k;
@@ -14,7 +18,7 @@ int getMinDiff(int *arr, int n, int k)
 
     if(small > big)
     {
-        swap(small, big);
+        std::swap(small, big);
     }
 
     for(int i=1; i<n-1 ;i++)
@@ -40,17 +44,14 @@ int getMinDiff(int *arr, int n, int k)
             }
         }
     }
-
-    return min(big - small, minDiff) ;
+    return std::min(big - small, minDiff) ;
 }
-
 
 int main()
 {
     int arr[] = {1, 5, 15, 10};
     int n = sizeof(arr)/sizeof(arr[0]);
     int k = 3;
-    cout << "Maximum difference is "
-        << getMinDiff(arr, n, k);
+    std:: cout << "Maximum difference : " << getMinDiff(arr, n, k);
     return 0;
 }

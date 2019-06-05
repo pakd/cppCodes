@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int smallestSubWithSum(int *arr, int n, int x)
 {
@@ -23,11 +22,10 @@ int smallestSubWithSum(int *arr, int n, int x)
         }
         else
         {
-            min_length = min(min_length, end - start);
+            min_length = std::min(min_length, end - start);
             curr_sum -= arr[start];
             start++;
         }
-
     }
     return min_length;
 }
@@ -38,22 +36,19 @@ int main()
     int x = 6;
     int n1 = sizeof(arr1)/sizeof(arr1[0]);
     int res1 = smallestSubWithSum(arr1, n1, x);
-    (res1 == n1+1)? cout << "Not possible\n" :
-                    cout << res1 << endl;
+    (res1 == n1+1)? std::cout << "Not possible\n" : std::cout << res1 << std::endl;
 
-                     int arr2[] = {1, 10, 5, 2, 7};
+    int arr2[] = {1, 10, 5, 2, 7};
     int n2 = sizeof(arr2)/sizeof(arr2[0]);
     x  = 9;
     int res2 = smallestSubWithSum(arr2, n2, x);
-    (res2 == n2+1)? cout << "Not possible\n" :
-                    cout << res2 << endl;
+    (res2 == n2+1)? std::cout << "Not possible\n" : std::cout << res2 << std::endl;
 
     int arr3[] = {1, 11, 100, 1, 0, 200, 3, 2, 1, 250};
     int n3 = sizeof(arr3)/sizeof(arr3[0]);
     x  = 280;
     int res3 = smallestSubWithSum(arr3, n3, x);
-    (res3 == n3+1)? cout << "Not possible\n" :
-                    cout << res3 << endl;
+    (res3 == n3+1)? std::cout << "Not possible\n" : std::cout << res3 << std::endl;
 
     return 0;
 }

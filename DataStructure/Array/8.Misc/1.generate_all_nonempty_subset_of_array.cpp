@@ -1,7 +1,5 @@
 #include <iostream>
 #include <cmath>
-using namespace std;
-
 
 void printSubsequences(int *arr, int n)
 {
@@ -12,10 +10,10 @@ void printSubsequences(int *arr, int n)
         {
             if(counter & (1 << i))
             {
-                cout << arr[i] << " ";
+                std::cout << arr[i] << " ";
             }
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 
@@ -23,7 +21,7 @@ int main()
 {
     int arr[] = {1, 2, 3, 4};
     int n = sizeof(arr)/sizeof(arr[0]);
-    cout << "All Non-empty Subsequences\n";
+    std::cout << "All Non-empty Subsequences\n";
     printSubsequences(arr, n);
     return 0;
 }

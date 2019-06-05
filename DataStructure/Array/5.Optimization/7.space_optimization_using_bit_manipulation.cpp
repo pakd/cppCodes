@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-using namespace std;
 
 
 // how to find index in array: divide by 32
@@ -45,10 +44,10 @@ int main()
         if (i % 2 == 0 || i % 5 == 0)
             setbit(array, i - a);
 
-    cout << "MULTIPLES of 2 and 5:\n";
+    std::cout << "MULTIPLES of 2 and 5:\n";
     for (int i = a; i <= b; i++)
         if (checkbit(array, i - a))
-            cout << i << " ";
+            std::cout << i << " ";
 
     return 0;
 }
