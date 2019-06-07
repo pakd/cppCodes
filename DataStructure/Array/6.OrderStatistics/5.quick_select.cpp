@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int partition(int *arr, int l, int r)
 {
@@ -10,10 +9,10 @@ int partition(int *arr, int l, int r)
         if(arr[j]<=key)
         {
             i++;
-            swap(arr[i],arr[j]);
+            std::swap(arr[i],arr[j]);
         }
     }
-    swap(arr[i+1], arr[r]);
+    std::swap(arr[i+1], arr[r]);
     return i+1;
 }
 
@@ -22,7 +21,7 @@ int randomPartition(int arr[], int l, int r)
 {
     int n = r-l+1;
     int pivot = rand() % n;
-    swap(arr[l + pivot], arr[r]);
+    std::swap(arr[l + pivot], arr[r]);
     return partition(arr, l, r);
 }
 
@@ -49,6 +48,6 @@ int main()
 {
     int arr[] = {12, 3, 5, 7, 4, 19, 26};
     int n = sizeof(arr)/sizeof(arr[0]), k = 3;
-    cout << "K'th smallest element is " << quickSelect(arr, 0, n-1, k);
+    std::cout << "K'th smallest element is " << quickSelect(arr, 0, n-1, k);
     return 0;
 }

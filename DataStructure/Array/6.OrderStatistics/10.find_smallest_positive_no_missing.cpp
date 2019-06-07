@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 int segregate (int *arr, int n)
 {
@@ -8,7 +7,7 @@ int segregate (int *arr, int n)
     {
         if(arr[j] < 0)
         {
-            swap(arr[index], arr[j]);
+            std::swap(arr[index], arr[j]);
             index++;
         }
     }
@@ -36,15 +35,13 @@ int findMissing(int *arr, int n)
 
 }
 
-
-
 int main()
 {
     int arr[] = { 2, 3, -7, 6, 8, 1, -10, 15 };
     int arr_size = sizeof(arr)/sizeof(arr[0]);
     int index=segregate (arr,  arr_size);
 
-    cout << findMissing(arr + index,  arr_size - index);
+    std::cout << findMissing(arr + index,  arr_size - index);
     return 0;
 
 }

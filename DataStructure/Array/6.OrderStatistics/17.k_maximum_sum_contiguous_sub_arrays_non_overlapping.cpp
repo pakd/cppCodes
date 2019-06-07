@@ -1,6 +1,5 @@
 #include <iostream>
 #include <queue>
-using namespace std;
 
 struct Node
 {
@@ -51,12 +50,13 @@ void kMaximumSums(int *arr, int n, int k)
     {
         Node temp = kadanes(arr, n);
 
-        cout << temp.lIndex << " -> " << temp.rIndex << " sum: " << temp.sum << endl;
+        std::cout << temp.lIndex << " -> " << temp.rIndex << " sum: " << temp.sum << std::endl;
 
         for(int i=temp.lIndex ; i<=temp.rIndex; i++)
         {
             arr[i] = INT_MIN;
         }
+        // last iteration of this is unnecessary
     }
 
 }

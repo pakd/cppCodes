@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 // maximum j - i such that arr[j] > arr[i]
 int maxIndexDiff(int *arr, int n)
@@ -9,13 +8,13 @@ int maxIndexDiff(int *arr, int n)
     leftMin[0] = arr[0];
     for(int i=1;i<n;i++)
     {
-        leftMin[i] = min(arr[i], leftMin[i-1]);
+        leftMin[i] = std::min(arr[i], leftMin[i-1]);
     }
 
     rightMax[n-1] = arr[n-1];
     for(int i=n-2;i>=0;i--)
     {
-        rightMax[i] = max(arr[i], rightMax[i+1]);
+        rightMax[i] = std::max(arr[i], rightMax[i+1]);
     }
 
     int i = 0, j = 0, maxDiff = -1;
@@ -23,7 +22,7 @@ int maxIndexDiff(int *arr, int n)
     {
         if (leftMin[i] < rightMax[j])
         {
-            maxDiff = max(maxDiff, j-i);
+            maxDiff = std::max(maxDiff, j-i);
             j++;
         }
         else
@@ -38,6 +37,6 @@ int main()
     int arr[] = {9, 2, 3, 4, 5, 6, 7, 8, 18, 0};
     int n = sizeof(arr)/sizeof(arr[0]);
     int maxDiff = maxIndexDiff(arr, n);
-    cout << maxDiff;
+    std::cout << maxDiff;
     return 0;
 }

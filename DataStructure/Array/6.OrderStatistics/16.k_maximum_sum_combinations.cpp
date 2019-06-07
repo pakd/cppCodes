@@ -2,7 +2,6 @@
 #include <queue>
 #include <set>
 #include <algorithm>
-using namespace std;
 
 struct Node
 {
@@ -25,15 +24,15 @@ class ComparisonClass {
 
 void KMaxCombinations(int *arrA, int n, int *arrB, int m, int k)
 {
-    priority_queue<Node, vector<Node>, ComparisonClass> pq;
-    set<pair<int, int>> s;
+    std::priority_queue<Node, std::vector<Node>, ComparisonClass> pq;
+    std::set<std::pair<int, int>> s;
 
     Node first;
     first.sum = arrA[n-1] + arrB[m-1];
     first.indexA = n - 1;
     first.indexB = m - 1;
     pq.push(first);
-    pair<int, int> t = {n-1, m-1};
+    std::pair<int, int> t = {n-1, m-1};
     s.insert(t);
 
 
@@ -46,7 +45,7 @@ void KMaxCombinations(int *arrA, int n, int *arrB, int m, int k)
 
         Node left, right;
 
-        pair <int, int> leftPair = {topE.indexA-1, topE.indexB};
+        std::pair <int, int> leftPair = {topE.indexA-1, topE.indexB};
         if(topE.indexA >0 && topE.indexB > 0 && s.find(leftPair)==s.end())
         {
             left.sum = arrA[topE.indexA-1] + arrB[topE.indexB];
@@ -55,7 +54,7 @@ void KMaxCombinations(int *arrA, int n, int *arrB, int m, int k)
             pq.push(left);
         }
 
-        pair <int, int> rightPair = {topE.indexA, topE.indexB - 1};
+        std::pair <int, int> rightPair = {topE.indexA, topE.indexB - 1};
         if(topE.indexA >0 && topE.indexB > 0 && s.find(rightPair)==s.end())
         {
             right.sum = arrA[topE.indexA] + arrB[topE.indexB - 1];
@@ -63,23 +62,21 @@ void KMaxCombinations(int *arrA, int n, int *arrB, int m, int k)
             right.indexB = topE.indexB - 1;
             pq.push(right);
         }
-        cout << count+1 << " "  <<arrA[topE.indexA] << "+" << arrB[topE.indexB] << "=" << topE.sum << endl;
+        std::cout << count+1 << " "  <<arrA[topE.indexA] << "+" << arrB[topE.indexB] << "=" << topE.sum << std::endl;
         count++;
     }
-
-
-
 }
+
 int main()
 {
     int arrA[] = { 1, 4, 2, 3 };
     int n = 4;
-    sort(arrA, arrA + n);
+    std::sort(arrA, arrA + n);
 
 
     int arrB[] = { 2, 5, 1, 6 };
     int m = 4;
-    sort(arrB, arrB + m);
+    std::sort(arrB, arrB + m);
 
     int K = 4;
     KMaxCombinations(arrA, n, arrB, m, K);

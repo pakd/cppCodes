@@ -1,11 +1,9 @@
 #include <iostream>
 #include <deque>
-using namespace std;
-
 
 int printKMax(int *arr, int n, int k)
 {
-    deque<int> dq;
+    std::deque<int> dq;
     int i=0;
     for(i=0;i<k;i++)
     {
@@ -20,7 +18,7 @@ int printKMax(int *arr, int n, int k)
 
     for( ; i<n ; i++)
     {
-        cout  << arr[dq.front()] << "\t";
+        std::cout  << arr[dq.front()] << "\t";
 
         // remove all elements from older windows
         while(!dq.empty() && dq.front() <= i-k)
@@ -35,7 +33,7 @@ int printKMax(int *arr, int n, int k)
         }
         dq.push_back(i);
     }
-    cout << arr[dq.front()] << "\t";
+    std::cout << arr[dq.front()] << "\t";
 }
 
 int main()

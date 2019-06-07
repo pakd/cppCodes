@@ -1,5 +1,4 @@
 #include<iostream>
-using namespace std;
 
 int FindMaxSum(int *arr, int n)
 {
@@ -9,7 +8,7 @@ int FindMaxSum(int *arr, int n)
     for(int i=1; i <n; i++)
     {
         // excluding ith element
-        int excl_temp = max(incl, excl);
+        int excl_temp = std::max(incl, excl);
 
         // including ith element
         incl = excl + arr[i];
@@ -17,15 +16,14 @@ int FindMaxSum(int *arr, int n)
         excl = excl_temp;
     }
 
-    return max(incl, excl);
+    return std::max(incl, excl);
 
 }
-
 
 int main()
 {
     int arr[] = {5, 5, 10, 100, 10, 5};
     int n = sizeof(arr) / sizeof(arr[0]);
-    cout << FindMaxSum(arr, n);
+    std::cout << FindMaxSum(arr, n);
     return 0;
 }

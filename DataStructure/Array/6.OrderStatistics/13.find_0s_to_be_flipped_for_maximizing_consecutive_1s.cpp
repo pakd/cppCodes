@@ -1,7 +1,4 @@
 #include <iostream>
-#include <set>
-using namespace std;
-
 
 // find m zeroes
 void findZeroes(int *arr, int n, int m)
@@ -46,11 +43,9 @@ void findZeroes(int *arr, int n, int m)
     {
         if(arr[bestL + i] == 0)
         {
-            cout << bestL + i << "\t";
+            std::cout << bestL + i << "\t";
         }
     }
-
-
 
 }
 int main()
@@ -58,7 +53,7 @@ int main()
     int arr[] = {1, 0, 0, 1, 1, 0, 1, 0, 1, 1};
     int m = 2;
     int n =  sizeof(arr)/sizeof(arr[0]);
-    cout << "Indexes of zeroes to be flipped are ";
+    std::cout << "Indexes of zeroes to be flipped are : ";
     findZeroes(arr, n, m);
     return 0;
 }

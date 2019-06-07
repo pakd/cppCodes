@@ -1,7 +1,5 @@
 #include <iostream>
 #include <queue>
-using namespace std;
-
 
 // https://www.geeksforgeeks.org/k-maximum-sum-overlapping-contiguous-sub-arrays/
 // https://www.geeksforgeeks.org/k-th-largest-sum-contiguous-subarray/
@@ -18,7 +16,7 @@ void kMaximumSums(int *arr, int n, int k)
     // take min heap if we have to find k maximum - current case
     // take max heap if we have to find k minimum
 
-    priority_queue<int, vector<int>, greater<int> > pq;
+    std::priority_queue<int, std::vector<int>, std::greater<int> > pq;
 
     for(int i=1; i<=n;i++)
     {
@@ -52,7 +50,7 @@ void kMaximumSums(int *arr, int n, int k)
 
     for(int i=0;i<k;i++)
     {
-        cout << i+1 << " " << printArr[i] << endl;
+        std::cout << i+1 << " " << printArr[i] << std::endl;
     }
 
 }

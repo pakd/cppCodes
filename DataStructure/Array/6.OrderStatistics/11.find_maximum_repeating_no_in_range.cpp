@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 // using no extra space
 int maxRepeatingNo(int *arr, int n, int k)
@@ -33,6 +32,6 @@ int main()
     int arr[] = {2, 3, 3, 5, 3, 4, 1, 7};
     int n = sizeof(arr)/sizeof(arr[0]);
     int k = 8;
-    cout << "The maximum repeating number is " << maxRepeatingNo(arr, n, k) << endl;
+    std::cout << "The maximum repeating number is " << maxRepeatingNo(arr, n, k) << std::endl;
     return 0;
 }

@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 // using no extra space
 void printClosest(int *arr1, int m, int *arr2, int n, int x)
@@ -26,7 +25,7 @@ void printClosest(int *arr1, int m, int *arr2, int n, int x)
             i++;
     }
 
-    cout << arr1[lIndex] << "\t" << arr2[rIndex];
+    std::cout << arr1[lIndex] << "\t" << arr2[rIndex];
 }
 
 int main()
