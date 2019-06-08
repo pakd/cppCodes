@@ -1,7 +1,5 @@
 #include <iostream>
 #include "linked_list_library.hpp"
-using namespace std;
-
 
 Node* square_root_nth_node(Node* head)
 {
@@ -49,7 +47,7 @@ int main()
     head = myList.insert(head,9);
     head = myList.insert(head,10);
     Node* ans = square_root_nth_node(head);
-    cout << ans->data;
+    std::cout << ans->data;
     return 0;
 
 }

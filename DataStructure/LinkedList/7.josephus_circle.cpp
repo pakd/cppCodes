@@ -1,6 +1,5 @@
 #include <iostream>
 #include "linked_list_library.hpp"
-using namespace std;
 
 Node* makeCircular(Node* head)
 {
@@ -13,6 +12,7 @@ Node* makeCircular(Node* head)
     itr->next = head;
     return head;
 }
+
 Node* josephusCircle(Node* head, int k)
 {
     Node* ptr = head;
@@ -34,7 +34,7 @@ Node* josephusCircle(Node* head, int k)
         // remove kth node
         prev->next = ptr->next;
 
-        cout << "deleted node:" << ptr->data << endl;
+        std::cout << "deleted node:" << ptr->data << std::endl;
 
         // move one node further
         ptr = prev->next; // as one node is already removed
@@ -59,7 +59,7 @@ int main()
     head = makeCircular(head);
 
     Node* lastNode = josephusCircle(head, 2);
-    cout << lastNode->data;
+    std::cout << lastNode->data;
 
     return 0;
 }

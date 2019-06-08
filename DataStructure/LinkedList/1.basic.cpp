@@ -1,6 +1,6 @@
 #include "linked_list_library.hpp"
 #include <iostream>
-using namespace std;
+
 int main()
 {
     BasicLinkedList myList;

@@ -1,7 +1,5 @@
 #include <iostream>
 #include "linked_list_library.hpp"
-using namespace std;
-
 
 Node* reverseLinkedList(Node* head, int k)
 {
@@ -21,12 +19,13 @@ Node* reverseLinkedList(Node* head, int k)
     if(Next)
     {
         // cout << "prev:" << prev ->data << endl;
-        head->next = reverseLinkedList(Next,k);
+        head->next = reverseLinkedList(Next, k);
     }
     head = prev; // prev is the last element in the kth block, so overall last prev after returning from recursion will be the head, in this case "3"
 
     return head;
 }
+
 int main()
 {
     BasicLinkedList myList;

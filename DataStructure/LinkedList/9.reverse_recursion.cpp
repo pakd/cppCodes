@@ -1,6 +1,7 @@
 #include <iostream>
 #include "linked_list_library.hpp"
-using namespace std;
+
+
 Node* head = NULL;
 void reverseRecursionLinkedList(Node* p)
 {
@@ -13,8 +14,8 @@ void reverseRecursionLinkedList(Node* p)
     Node* q = p->next;
     q->next = p;
     p->next = NULL;
-
 }
+
 int main()
 {
     BasicLinkedList myList;

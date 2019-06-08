@@ -1,6 +1,5 @@
 #include <iostream>
 #include "linked_list_library.hpp"
-using namespace std;
 
 Node* curr = NULL;
 

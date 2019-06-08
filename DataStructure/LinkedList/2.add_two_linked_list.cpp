@@ -1,6 +1,6 @@
 #include <iostream>
 #include "linked_list_library.hpp"
-using namespace std;
+
 
 Node* addLinkedLists(Node* head1, Node* head2)
 {
@@ -40,14 +40,18 @@ int main()
     head1 = myList.insert(head1,9);
     head1 = myList.insert(head1,4);
     head1 = myList.insert(head1,6);
+    myList.display(head1); // 64957
+    std::cout << std::endl;
 
     Node* head2 = NULL;
     head2 = myList.insert(head2,8);
     head2 = myList.insert(head2,4);
+    myList.display(head2); //48
+    std::cout << std::endl;
 
     Node* head3 = NULL ;
     head3 = addLinkedLists(head1,head2);
-    myList.display(head3);
+    myList.display(head3); //50056
 
     return 0;
 }

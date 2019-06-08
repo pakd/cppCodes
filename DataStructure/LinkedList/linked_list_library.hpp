@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 class Node
 {
@@ -22,7 +21,7 @@ public:
         Node *start = head;
         while(start)
         {
-            cout << start->data <<" ";
+            std::cout << start->data <<" ";
             start = start->next;
         }
     }

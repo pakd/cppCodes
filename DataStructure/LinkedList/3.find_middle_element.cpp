@@ -1,6 +1,5 @@
 #include <iostream>
 #include "linked_list_library.hpp"
-using namespace std;
 
 Node* findMiddleNode(Node* head)
 {
@@ -27,7 +26,7 @@ int main()
     {
         head = myList.insert(head, i);
         Node* middle = findMiddleNode(head);
-        cout << i << " : "<<middle->data << endl;
+        std::cout << i << " : "<< middle->data << std::endl;
     }
 
     return 0;
