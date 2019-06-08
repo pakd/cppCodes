@@ -2,24 +2,24 @@
 #include <list>
 #include <vector>
 
-using namespace std;
 
 enum colors {
     White = 0,
     Gray = 1,
     Black = 2
 };
+
 class Graph
 {
 public:
 
     int v; // no of vertices
-    list<int> *adj;
+    std::list<int> *adj;
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list<int>[v];
+        adj = new std::list<int>[v];
     }
 
     // directed graph
@@ -28,7 +28,7 @@ public:
         adj[u].push_back(w);
     }
 
-    bool isCycleDFS(int s, vector<colors> &Color)
+    bool isCycleDFS(int s, std::vector<colors>& Color)
     {
         // put in gray color , currently visited nodes
         Color[s] = Gray;
@@ -59,7 +59,7 @@ public:
     {
 
         // initially all white color
-        vector<colors> Color(v, White);
+        std::vector<colors> Color(v, White);
 
         for(int i=0; i<v; i++)
         {
@@ -72,7 +72,6 @@ public:
             }
         }
         return false;
-
     }
 };
 
@@ -88,11 +87,11 @@ int main()
     g.addEdge(3, 3);
 
     if (g.checkCycle())
-        cout << "Graph contains cycle";
+        std::cout << "Graph contains cycle";
     else
-        cout << "Graph doesn't contain cycle";
+        std::cout << "Graph doesn't contain cycle";
 
-        cout << endl;
+        std::cout << std::endl;
 
     Graph g2(4);
     g2.addEdge(0, 1);
@@ -100,9 +99,9 @@ int main()
     g2.addEdge(2, 3);
 
     if (g2.checkCycle())
-        cout << "Graph contains cycle";
+        std::cout << "Graph contains cycle";
     else
-        cout << "Graph doesn't contain cycle";
+        std::cout << "Graph doesn't contain cycle";
 
 
     return 0;

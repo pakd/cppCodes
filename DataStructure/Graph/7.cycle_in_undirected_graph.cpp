@@ -1,20 +1,19 @@
 #include <iostream>
 #include <list>
 
-using namespace std;
 
 class Graph
 {
 public:
 
     int v; // no of vertices
-    list<int> *adj;
+    std::list<int> *adj;
     int *visited;
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list<int>[v];
+        adj = new std::list<int>[v];
         visited = new int[v];
         for(int i=0; i<v; i++)
         {
@@ -31,7 +30,7 @@ public:
 
     bool isCycleDFS(int s, int parent)
     {
-        cout << s << " " << parent << endl;
+        std::cout << s << " " << parent << std::endl;
         visited[s] = true;
 
         for(auto i : adj[s])
@@ -68,7 +67,6 @@ public:
             }
         }
         return false;
-
     }
 };
 
@@ -79,15 +77,12 @@ int main()
     g1.addEdge(1, 2);
     g1.addEdge(2, 3);
     g1.addEdge(3, 0);
-    g1.checkCycle()? cout << "Graph contains cycle\n":
-                          cout << "Graph doesn't contain cycle\n";
+    g1.checkCycle()? std::cout << "Graph contains cycle\n": std::cout << "Graph doesn't contain cycle\n";
 
     Graph g2(3);
     g2.addEdge(0, 1);
     g2.addEdge(1, 2);
-    g2.checkCycle()? cout << "Graph contains cycle\n":
-                          cout << "Graph doesn't contain cycle\n";
-
+    g2.checkCycle()? std::cout << "Graph contains cycle\n": std::cout << "Graph doesn't contain cycle\n";
 
     return 0;
 }
