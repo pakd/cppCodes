@@ -1,8 +1,7 @@
 #include <iostream>
 #include <list>
 #include <queue>
-
-using namespace std;
+#include <vector>
 
 
 class Graph
@@ -10,14 +9,15 @@ class Graph
 public:
 
     int v; // no of vertices
-    list<int> *adj;
+    std::list<int> *adj;
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list<int>[v];
+        adj = new std::list<int>[v];
     }
 
+    // directed graph
     void addEdge(int v, int w)
     {
         adj[v].push_back(w);
@@ -26,11 +26,9 @@ public:
     void BFS(int s)
     {
         // visited array
+        std::vector<bool> visited(v, false);
 
-        vector<bool> visited(v, false);
-
-
-        queue<int> q;
+        std::queue<int> q;
 
         visited[s] = true;
         q.push(s);
@@ -38,19 +36,18 @@ public:
         while(!q.empty())
         {
             int curr = q.front();
-            cout << curr << " ";
+            std::cout << curr << " ";
             q.pop();
 
-            for(auto i=adj[curr].begin(); i!=adj[curr].end(); i++)
+            for(auto i : adj[curr])
             {
-                if(!visited[*i])
+                if(!visited[i])
                 {
-                    visited[*i] = true;
-                    q.push(*i);
+                    visited[i] = true;
+                    q.push(i);
                 }
             }
         }
-
     }
 };
 
@@ -65,8 +62,8 @@ int main()
     g.addEdge(2, 3);
     g.addEdge(3, 3);
 
-    cout << "Following is Breadth First Traversal "
-         << "(starting from vertex 2) \n";
+    std::cout << "Following is Breadth First Traversal "
+              << "(starting from vertex 2) \n";
     g.BFS(2);
 
     return 0;

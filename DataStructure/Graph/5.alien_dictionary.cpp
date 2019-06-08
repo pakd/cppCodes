@@ -1,14 +1,12 @@
 #include <iostream>
 #include <list>
 #include <stack>
-#include <map>
-using namespace std;
 
 class Graph
 {
 public:
     int V;
-    list<int> *adj;
+    std::list<int> *adj;
     int *visited;
 
 
@@ -16,7 +14,7 @@ public:
     Graph(int v)
     {
         this->V = v;
-        adj = new list<int>[v];
+        adj = new std::list<int>[v];
         visited = new int[V];
 
         for(int i=0; i<v; i++)
@@ -30,9 +28,10 @@ public:
         adj[start].push_back(end);
     }
 
-    void topologicalSortUtil(int s, stack<int>& st)
+    void topologicalSortUtil(int s, std::stack<int>& st)
     {
         visited[s] = true;
+
         for(auto it : adj[s])
         {
             if(!visited[it])
@@ -40,12 +39,14 @@ public:
                 topologicalSortUtil(it, st);
             }
         }
+
+        // done processing, push to stack
         st.push(s);
     }
 
     void topologicalSort()
     {
-        stack<int> st;
+        std::stack<int> st;
 
         for(int i=0; i<V; i++)
         {
@@ -57,13 +58,13 @@ public:
 
         while(!st.empty())
         {
-            cout << char(st.top() + 'a') << " ";
+            std::cout << char(st.top() + 'a') << " ";
             st.pop();
         }
     }
 };
 
-void printOrder(string *arr, int n, int alpha)
+void printOrder(std::string *arr, int n, int alpha)
 {
 
     Graph g(alpha);
@@ -77,22 +78,19 @@ void printOrder(string *arr, int n, int alpha)
 
             g.addEdge(tempS - 'a', tempE - 'a');
         }
-
     }
 
     g.topologicalSort();
-
-
 }
 
 int main()
 {
-    string words[] = {"baa", "abcd", "abca", "cab", "cad"};
-    // string words[] = {"ccee", "cdbb", "bae", "aee", "daa"}; // alpha = 5 -> cdbae
+    //std::string words[] = {"baa", "abcd", "abca", "cab", "cad"}; // ans can be multiple
+    std::string words[] = {"ccee", "cdbb", "bae", "aee", "daa"}; // alpha = 5 -> cdbae
     int size = 5;
 
-    // lets assume 4 starting alphabets only
-    printOrder(words, size, 4);
+    // lets assume 5 starting alphabets only
+    printOrder(words, size, 5);
 
     return 0;
 }

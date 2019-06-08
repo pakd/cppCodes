@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 #define N 4
 
@@ -10,12 +9,13 @@ void printSolution(int sol[N][N])
     {
         for (int j = 0; j < N; j++)
         {
-            cout << sol[i][j] << " ";
+            std::cout << sol[i][j] << " ";
         }
-        cout << endl;
+        std::cout << std::endl;
     }
 }
 
+// utility function to check if cell is safe or not(out of boundary)
 bool isSafe(int maze[N][N], int x, int y)
 {
     // if (x,y outside maze) return false
@@ -71,7 +71,7 @@ void solveMaze(int maze[N][N])
 
     if(!solveMazeUtil(maze, 0, 0, sol))
     {
-        cout << "Solution doesn't exist";
+        std::cout << "Solution doesn't exist";
         return;
     }
     else

@@ -1,23 +1,20 @@
 #include <iostream>
 #include <list>
 
-using namespace std;
-
-
 class Graph
 {
 public:
 
     int v; // no of vertices
-    list<int> *adj;
+    std::list<int> *adj;
     int *visited;
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list<int>[v];
+        adj = new std::list<int>[v];
         visited = new int[v];
-        for(int i=0;i<v;i++)
+        for(int i=0; i<v; i++)
         {
             visited[i] = false;
         }
@@ -34,7 +31,7 @@ public:
         // visited array
         visited[s] = true;
 
-        cout << s << " ";
+        std::cout << s << " ";
 
         for(auto i : adj[s])
         {
@@ -64,10 +61,8 @@ int main()
     g.addEdge(1, 5);
     g.addEdge(1, 4); // DFS : 2 0 1 5 4 3
 
-
-
-    cout << "Following is Depth First Traversal "
-         << "(starting from vertex 2) \n";
+    std::cout << "Following is Depth First Traversal "
+              << "(starting from vertex 2) \n";
     g.DFS(2);
 
     return 0;

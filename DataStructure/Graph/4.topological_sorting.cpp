@@ -2,8 +2,6 @@
 #include <list>
 #include <stack>
 
-using namespace std;
-
 /*
 * Applications of topological sort
 * 1. Build Systems
@@ -17,13 +15,13 @@ class Graph
 public:
 
     int v; // no of vertices
-    list<int> *adj;
+    std::list<int> *adj;
     int *visited;
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list<int>[v];
+        adj = new std::list<int>[v];
         visited = new int[v];
         for(int i=0; i<v; i++)
         {
@@ -37,7 +35,7 @@ public:
         adj[v].push_back(w);
     }
 
-    void topologicalSortUtil(int s, stack<int> &st)
+    void topologicalSortUtil(int s, std::stack<int>& st)
     {
         visited[s] = true;
 
@@ -49,13 +47,14 @@ public:
             }
         }
 
+        // after complete processing push to stack
         st.push(s);
     }
 
 
     void topologicalSort()
     {
-        stack<int> st;
+        std::stack<int> st;
 
         // call topologicalSortUtil for every vertex
         for(int i=0;i<v;i++)
@@ -68,7 +67,7 @@ public:
 
         while(!st.empty())
         {
-            cout << st.top() << " ";
+            std::cout << st.top() << " ";
             st.pop();
         }
 
@@ -85,9 +84,7 @@ int main()
     g.addEdge(2, 3);
     g.addEdge(3, 1);
 
-
-
-    cout << "Following is a Topological Sort of the given graph \n";
+    std::cout << "Following is a Topological Sort of the given graph \n";
     g.topologicalSort();
 
     return 0;
