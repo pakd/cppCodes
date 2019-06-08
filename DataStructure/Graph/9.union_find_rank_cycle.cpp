@@ -1,6 +1,5 @@
 #include <iostream>
 #include <vector>
-using namespace std;
 
 struct subset
 {
@@ -47,27 +46,21 @@ public:
         int yRoot = find(y);
 
         // make yRoot parent
-        if(subsets[xRoot].rank < subsets[yRoot].rank)
+        if(subsets[xRoot].rank <= subsets[yRoot].rank)
         {
             subsets[xRoot].parent = yRoot;
-            // subsets[yRoot].rank++;
+            subsets[yRoot].rank++;
         }
         // make xRoot parent
         else if(subsets[xRoot].rank > subsets[yRoot].rank)
         {
             subsets[yRoot].parent = xRoot;
-            // subsets[xRoot].rank++;
-        }
-        // if both ranks equal, make anyone parent
-        // lets make xRoot parent
-        else
-        {
-            subsets[yRoot].parent = xRoot;
             subsets[xRoot].rank++;
         }
+
     }
 
-    bool isCycle(vector<pair<int, int>> &edges)
+    bool isCycle(std::vector<std::pair<int, int>> &edges)
     {
         for(auto i : edges)
         {
@@ -87,18 +80,18 @@ public:
 
 int main()
 {
-    vector<pair<int, int>> edges;
-    edges.push_back(make_pair(0, 1));
-    edges.push_back(make_pair(1, 2));
-    edges.push_back(make_pair(0, 2)); // can comment this to get , "Graph doesn't contain cycle"
+    std::vector<std::pair<int, int>> edges;
+    edges.push_back(std::make_pair(0, 1));
+    edges.push_back(std::make_pair(1, 2));
+    edges.push_back(std::make_pair(0, 2)); // can comment this to get , "Graph doesn't contain cycle"
 
     int V = 3;
     Graph g(3);
 
     if (g.isCycle(edges))
-        cout << "Graph contains cycle";
+        std::cout << "Graph contains cycle";
     else
-        cout << "Graph doesn't contain cycle";
+        std::cout << "Graph doesn't contain cycle";
 
     return 0;
 }
