@@ -1,26 +1,17 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using namespace std;
 
-typedef pair<int, int> iPair;
-
-struct subset
-{
-    int parent;
-    int rank;
-};
+typedef std::pair<int, int> iPair;
 
 class Graph
 {
 
 public:
 
-    // first = parent
-    // second = rank
     int *dist;
     int V;
-    vector<pair<int, iPair>> edges;
+    std::vector<std::pair<int, iPair>> edges;
 
     Graph(int V)
     {
@@ -38,7 +29,7 @@ public:
 
     void addEdge(int src, int dest, int weight)
     {
-        edges.push_back(make_pair(weight, make_pair(src, dest)));
+        edges.push_back(std::make_pair(weight, std::make_pair(src, dest)));
     }
 
     void BellmanFord(int src)
@@ -74,7 +65,7 @@ public:
             int weight = j.first;
             if (dist[u] != INT_MAX && dist[u] + weight < dist[v])
             {
-                cout << "Graph contains negative weight cycle";
+                std::cout << "Graph contains negative weight cycle";
             }
 
         }
@@ -85,10 +76,10 @@ public:
 
     void printArr()
     {
-        cout << "Vertex   Distance from Source\n";
+        std::cout << "Vertex   Distance from Source\n";
         for (int i = 0; i < V; ++i)
         {
-            cout << i << "\t" << dist[i] << endl;
+            std::cout << i << "\t" << dist[i] << std::endl;
         }
     }
 

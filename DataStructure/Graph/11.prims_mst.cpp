@@ -3,10 +3,7 @@
 #include <vector>
 #include <queue>
 
-
-using namespace std;
-
-typedef pair<int, int> iPair;
+typedef std::pair<int, int> iPair;
 #define INF INT_MAX
 
 class Graph
@@ -14,42 +11,37 @@ class Graph
 public:
 
     int v; // no of vertices
-    list< iPair> *adj; // edges with weight
+    std::list< iPair> *adj; // edges with weight
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list<iPair>[v];
+        adj = new std::list<iPair>[v];
 
     }
 
     void addEdge(int u, int v, int w)
     {
-        adj[u].push_back(make_pair(v, w));
-        adj[v].push_back(make_pair(u, w));
+        adj[u].push_back(std::make_pair(v, w));
+        adj[v].push_back(std::make_pair(u, w));
     }
-
-
 
     void primMST()
     {
 
         // priority queue for getting minimum weight edge
         // min heap
-        priority_queue<iPair, vector<iPair>, greater<iPair>> pq;
+        std::priority_queue<iPair, std::vector<iPair>, std::greater<iPair>> pq;
 
         int src = 0;
 
-        vector<int> dist(v, INF);
-
-        vector<int> parent(v, -1);
-
-        vector<bool> inMST(v, false);
+        std::vector<int> dist(v, INF);
+        std::vector<int> parent(v, -1);
+        std::vector<bool> inMST(v, false);
 
         // push first source vertex
-        pq.push(make_pair(0,src));
+        pq.push(std::make_pair(0,src));
         dist[src] = 0;
-
 
         while(!pq.empty())
         {
@@ -68,7 +60,7 @@ public:
                 if(inMST[v] == false && dist[v] > weight)
                 {
                     dist[v] = weight;
-                    pq.push(make_pair(dist[v],v));
+                    pq.push(std::make_pair(dist[v],v));
                     parent[v] = u;
                 }
             }
@@ -103,7 +95,6 @@ int main()
     g.addEdge(7, 8, 7);
 
     g.primMST();
-
 
     return 0;
 }

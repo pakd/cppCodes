@@ -3,60 +3,53 @@
 #include <set>
 #include <vector>
 
-
-using namespace std;
-
-
 class Graph
 {
 public:
 
     int v; // no of vertices
-    list< pair<int, int>> *adj; // edges with weight
+    std::list< std::pair<int, int>> *adj; // edges with weight
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list< pair<int, int>>[v];
-
+        adj = new std::list< std::pair<int, int>>[v];
     }
 
+    // undirected graph
     void addEdge(int u, int v, int w)
     {
-        adj[u].push_back(make_pair(v, w));
-        adj[v].push_back(make_pair(u, w));
+        adj[u].push_back(std::make_pair(v, w));
+        adj[v].push_back(std::make_pair(u, w));
     }
-
-
 
     void shortestPath(int s)
     {
         // as set is sorted it will give the edge with the minimum weight
         // first = weight, second = vertex
-        set<pair <int, int>> setds;
+        std::set<std::pair <int, int>> setds;
 
         // vector for storing answer
-        vector<int> dist(v, INT_MAX);
+        std::vector<int> dist(v, INT_MAX);
 
         // insert first edge
-        setds.insert(make_pair(0, s));
+        setds.insert(std::make_pair(0, s));
         dist[s] = 0;
 
 
         // while there are edges to process
         while(!setds.empty())
         {
-            pair<int, int> temp = *setds.begin();
+            std::pair<int, int> temp = *setds.begin();
             setds.erase(setds.begin());
 
             int u = temp.second;
 
             // list<pair <int, int>>::iterator it;
-            for(auto it = adj[u].begin(); it!=adj[u].end(); it++)
+            for(auto it : adj[u])
             {
-                pair<int, int> t = *it;
-                int v = t.first;
-                int weight = t.second;
+                int v = it.first;
+                int weight = it.second;
 
                 // if there is shortest path to v via u, then update
                 if(dist[v] > dist[u] + weight)
@@ -69,20 +62,19 @@ public:
                     for which distance is finalized. So for them,
                     we would never reach here.  */
                     if (dist[v] != INT_MAX)
-                        setds.erase(setds.find(make_pair(dist[v], v)));
+                        setds.erase(setds.find(std::make_pair(dist[v], v)));
 
                     dist[v] = dist[u] + weight;
-                    setds.insert(make_pair(dist[v], v));
-
+                    setds.insert(std::make_pair(dist[v], v));
                 }
             }
         }
 
         // Print shortest distances stored in dist[]
-        cout << "Vertex   Distance from Source\n";
+        std::cout << "Vertex   Distance from Source\n";
         for (int i = 0; i < v; ++i)
         {
-            cout << i << " : " << dist[i] << endl;
+            std::cout << i << " : " << dist[i] << std::endl;
         }
 
     }
@@ -93,7 +85,6 @@ int main()
 
     int V = 9;
     Graph g(V);
-
 
     g.addEdge(0, 1, 4);
     g.addEdge(0, 7, 8);
@@ -111,7 +102,6 @@ int main()
     g.addEdge(7, 8, 7);
 
     g.shortestPath(0);
-
 
     return 0;
 }

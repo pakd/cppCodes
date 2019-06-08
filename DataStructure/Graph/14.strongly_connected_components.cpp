@@ -2,7 +2,6 @@
 #include <list>
 #include <stack>
 
-using namespace std;
 /*
 We can find all strongly connected components in O(V+E) time using Kosaraju’s algorithm. Following is detailed Kosaraju’s algorithm.
 1) Create an empty stack ‘S’ and do DFS traversal of a graph.
@@ -19,15 +18,15 @@ class Graph
 public:
 
     int v; // no of vertices
-    list<int> *adj;
+    std::list<int> *adj;
     int *visited;
 
     Graph(int v)
     {
         this->v = v;
-        adj = new list<int>[v];
+        adj = new std::list<int>[v];
         visited = new int[v];
-        for(int i=0;i<v;i++)
+        for(int i=0; i<v; i++)
         {
             visited[i] = false;
         }
@@ -39,7 +38,7 @@ public:
         adj[v].push_back(w);
     }
 
-    void DFSUtilStack(int s, stack<int> &st)
+    void DFSUtilStack(int s, std::stack<int> &st)
     {
         // visited array
         visited[s] = true;
@@ -58,7 +57,7 @@ public:
     {
         // visited array
         visited[s] = true;
-        cout << s << " " ;
+        std::cout << s << " " ;
         for(auto i : adjT[s])
         {
             if(!visited[i])
@@ -70,8 +69,8 @@ public:
 
     void StrongConnectedComponents()
     {
-        stack<int> st;
-        for(int i=0;i<v;i++)
+        std::stack<int> st;
+        for(int i=0; i<v; i++)
         {
             if(!visited[i])
             {
@@ -94,17 +93,17 @@ public:
             if(!visited[stTop])
             {
                 DFSUtil(stTop);
-                cout << endl;
+                std::cout << std::endl;
             }
         }
     }
 
-    list<int> *adjT;
+    std::list<int> *adjT;
 
     void transposeGraph()
     {
-        adjT = new list<int>[v];
-        for(int i=0;i<v;i++)
+        adjT = new std::list<int>[v];
+        for(int i=0; i<v; i++)
         {
             for(auto j : adj[i])
             {
@@ -124,8 +123,8 @@ int main()
     g.addEdge(0, 3);
     g.addEdge(3, 4);
 
-    cout << "Following are strongly connected components in "
-            "given graph \n";
+    std::cout << "Following are strongly connected components in "
+              "given graph \n";
     g.StrongConnectedComponents();
 
     return 0;

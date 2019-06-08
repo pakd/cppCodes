@@ -1,9 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
-using namespace std;
 
-typedef pair<int, int> iPair;
+typedef std::pair<int, int> iPair;
 
 struct subset
 {
@@ -19,7 +18,7 @@ public:
     // first = parent
     // second = rank
     subset *subsets;
-    vector<pair<int, iPair>> edges;
+    std::vector<std::pair<int, iPair>> edges;
 
     Graph(int V)
     {
@@ -30,12 +29,11 @@ public:
             subsets[i].parent = i;
             subsets[i].rank = 0;
         }
-
     }
 
     void addEdge(int src, int dest, int weight)
     {
-        edges.push_back(make_pair(weight, make_pair(src, dest)));
+        edges.push_back(std::make_pair(weight, std::make_pair(src, dest)));
     }
 
     // if i = subsets[i].parent then it is single element in set or root
@@ -56,20 +54,13 @@ public:
         int yRoot = find(y);
 
         // make yRoot parent
-        if(subsets[xRoot].rank < subsets[yRoot].rank)
+        if(subsets[xRoot].rank <= subsets[yRoot].rank)
         {
             subsets[xRoot].parent = yRoot;
-             //subsets[yRoot].rank++;
+            subsets[yRoot].rank++;
         }
         // make xRoot parent
         else if(subsets[xRoot].rank > subsets[yRoot].rank)
-        {
-            subsets[yRoot].parent = xRoot;
-             //subsets[xRoot].rank++;
-        }
-        // if both ranks equal, make anyone parent
-        // lets make xRoot parent
-        else
         {
             subsets[yRoot].parent = xRoot;
             subsets[xRoot].rank++;
@@ -80,7 +71,7 @@ public:
     {
         int mst_wt = 0;
 
-        sort(edges.begin(), edges.end());
+        std::sort(edges.begin(), edges.end());
 
         for(auto it:edges)
         {
@@ -91,7 +82,7 @@ public:
             if(xRoot != yRoot)
             {
                 // include the edge
-                cout << it.second.first << "->" << it.second.second << endl;
+                std::cout << it.second.first << "->" << it.second.second << std::endl;
                 mst_wt += it.first;
 
                 Union(xRoot, yRoot);
@@ -123,10 +114,10 @@ int main()
     g.addEdge(7, 8, 7);
 
 
-    cout << "Edges of MST are \n";
+    std::cout << "Edges of MST are \n";
     int mst_wt = g.kruskalMST();
 
-    cout << "\nWeight of MST is " << mst_wt;
+    std::cout << "\nWeight of MST is " << mst_wt;
 
     return 0;
 }
