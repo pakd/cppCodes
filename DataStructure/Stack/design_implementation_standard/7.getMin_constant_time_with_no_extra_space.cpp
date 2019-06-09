@@ -1,8 +1,7 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
-stack<int> st;
+std::stack<int> st;
 int minElem = INT_MAX;
 
 void pushStack(int x)
@@ -55,12 +54,12 @@ int main()
     pushStack(20);
     pushStack(30);
 
-    cout  << getMin() << endl; // 10
+    std::cout  << getMin() << std::endl; // 10
 
     pushStack(5);
     pushStack(50);
 
-    cout  << getMin() << endl; // 5
+    std::cout  << getMin() << std::endl; // 5
 
     popStack();
 
@@ -68,13 +67,13 @@ int main()
     popStack();
     //cout << "popstack value:" << popStack() << endl;
 
-    cout  << getMin() << endl; // 10
+    std::cout  << getMin() << std::endl; // 10
 
     popStack();
     popStack();
     popStack();
 
-    cout  << getMin() << endl; // INT_MAX
+    std::cout  << getMin() << std::endl; // INT_MAX
 
     return 0;
 }

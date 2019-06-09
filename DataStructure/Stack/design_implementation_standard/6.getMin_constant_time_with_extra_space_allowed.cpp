@@ -1,9 +1,9 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
-stack<int> st;
-stack<int> minSt;
+
+std::stack<int> st;
+std::stack<int> minSt;
 
 void pushStack(int elem)
 {
@@ -35,7 +35,7 @@ int getMin()
     {
         return minSt.top();
     }
-    return -1;
+    return INT_MAX;
 }
 int main()
 {
@@ -48,23 +48,23 @@ int main()
     pushStack(20);
     pushStack(30);
 
-    cout  << getMin() << endl; // 10
+    std::cout  << getMin() << std::endl; // 10
 
     pushStack(5);
     pushStack(50);
 
-    cout  << getMin() << endl; // 5
+    std::cout  << getMin() << std::endl; // 5
 
     popStack();
     popStack();
 
-    cout  << getMin() << endl; // 10
+    std::cout  << getMin() << std::endl; // 10
 
     popStack();
     popStack();
     popStack();
 
-    cout  << getMin() << endl; // -1
+    std::cout  << getMin() << std::endl; // -1
 
     return 0;
 }

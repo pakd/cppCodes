@@ -1,10 +1,9 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
-stack<int> sortStack(stack<int>& input)
+std::stack<int> sortStack(std::stack<int>& input)
 {
-    stack<int> tmpStack;
+    std::stack<int> tmpStack;
 
     while(!input.empty())
     {
@@ -22,10 +21,9 @@ stack<int> sortStack(stack<int>& input)
     return tmpStack;
 }
 
-
 int main()
 {
-    stack<int> input;
+    std::stack<int> input;
     input.push(34);
     input.push(3);
     input.push(31);
@@ -33,11 +31,11 @@ int main()
     input.push(92);
     input.push(23);
 
-    stack<int> res = sortStack(input);
+    std::stack<int> res = sortStack(input);
 
     while(!res.empty())
     {
-        cout << res.top() << " ";
+        std::cout << res.top() << " ";
         res.pop();
     }
 

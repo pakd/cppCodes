@@ -1,9 +1,7 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
-
-stack <int> st;
+std::stack <int> st;
 
 // recursive function for putting elem in sorted order
 void sortedInsert(int elem)
@@ -51,7 +49,7 @@ int main()
 
     while(!st.empty())
     {
-        cout << st.top() << "\t";
+        std::cout << st.top() << "\t";
         st.pop();
     }
 

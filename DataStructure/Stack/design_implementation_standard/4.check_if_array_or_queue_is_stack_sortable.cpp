@@ -1,20 +1,18 @@
 #include <iostream>
 #include <stack>
-using namespace std;
-
 
 bool check(int *arr, int n)
 {
     int indexOfSecondArray = 1;
 
-    stack<int> st;
+    std::stack<int> st;
 
     for(int i=0;i<n;i++)
     {
         // start printing in sorted order, if array element is already sorted
         if(arr[i] == indexOfSecondArray)
         {
-            cout << "sorted: " << indexOfSecondArray << endl;
+            std::cout << "sorted: " << indexOfSecondArray << std::endl;
             indexOfSecondArray++;
         }
         else
@@ -29,7 +27,7 @@ bool check(int *arr, int n)
             // pop and print
             while(!st.empty() && st.top() == indexOfSecondArray)
             {
-                cout << "sorted: " << st.top() << endl;
+                std::cout << "sorted: " << st.top() << std::endl;
                 indexOfSecondArray++;
                 st.pop();
             }
@@ -49,7 +47,7 @@ bool check(int *arr, int n)
 
     while(!st.empty())
     {
-        cout << "sorted: " << st.top() << endl;
+        std::cout << "sorted: " << st.top() << std::endl;
         st.pop();
     }
 
@@ -63,6 +61,6 @@ int main()
     // int arr[] = {2, 3, 1}; // no
     // int arr[] = {4, 5 , 2, 3, 6, 1}; // no
     int N = sizeof(arr) / sizeof(arr[0]);
-    check(arr, N)? cout<<"YES": cout<<"NO";
+    check(arr, N)? std::cout << "YES" : std::cout << "NO";
     return 0;
 }

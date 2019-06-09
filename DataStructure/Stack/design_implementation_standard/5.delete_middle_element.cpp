@@ -1,8 +1,7 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
-stack<int> st;
+std::stack<int> st;
 
 void deleteMiddleElem(int sizeofStack, int n)
 {
@@ -37,10 +36,9 @@ int main()
 
     while(!st.empty())
     {
-        cout << st.top() << " ";
+        std::cout << st.top() << " ";
         st.pop();
     }
 
     return 0;
-
 }
