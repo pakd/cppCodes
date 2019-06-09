@@ -1,18 +1,17 @@
 #include <iostream>
 #include <stack>
 #include <vector>
-using namespace std;
 
-string identifyParenthesis(string input)
+std::string identifyParenthesis(std::string input)
 {
-    stack<int> st;
+    std::stack<int> st;
 
 
     int len = input.length();
 
     // -1 will increase the length of the input string
     // better to keep array of string
-    vector<string> dpk(len, "");
+    std::vector<std::string> dpk(len, "");
 
     for(int i=0; i<len; i++)
     {
@@ -52,7 +51,7 @@ string identifyParenthesis(string input)
         st.pop();
     }
 
-    string ret = "";
+    std::string ret = "";
     for(int  i=0;i<len; i++)
     {
         ret +=  dpk[i];
@@ -63,10 +62,10 @@ string identifyParenthesis(string input)
 
 int main()
 {
-    string str = "(a))";
-    cout << identifyParenthesis(str) << endl;
+    std::string str = "(a))";
+    std::cout << identifyParenthesis(str) << std::endl;
 
-    string str2 = "(((abc))((d)))))";
-    cout << identifyParenthesis(str2) << endl;
+    std::string str2 = "(((abc))((d)))))";
+    std::cout << identifyParenthesis(str2) << std::endl;
     return 0;
 }

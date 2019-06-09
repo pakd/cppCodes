@@ -1,25 +1,24 @@
 #include <iostream>
 #include <queue>
 #include <stack>
-using namespace std;
 
 bool checkStackPermutation(int *input, int *output, int n)
 {
     // input queue
-    queue <int> in;
+    std::queue <int> in;
     for(int i=0; i<n; i++)
     {
         in.push(input[i]);
     }
 
     // output queue
-    queue <int> out;
+    std::queue <int> out;
     for(int i=0; i<n; i++)
     {
         out.push(output[i]);
     }
 
-    stack<int> tmpStack;
+    std::stack<int> tmpStack;
 
     while(!in.empty())
     {
@@ -66,8 +65,8 @@ int main()
     int n = 3;
 
     if (checkStackPermutation(input, output, n))
-        cout << "Yes";
+        std::cout << "Yes";
     else
-        cout << "Not Possible";
+        std::cout << "Not Possible";
     return 0;
 }

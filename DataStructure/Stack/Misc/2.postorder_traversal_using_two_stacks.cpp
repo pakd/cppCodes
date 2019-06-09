@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
 // A tree node
 class Node
@@ -18,14 +17,13 @@ Node* newNode(int data)
     return node;
 }
 
-
 void postOrderIterative(Node* root)
 {
     if (root == NULL)
         return;
 
-    stack<Node*> st1;
-    stack<Node*> st2;
+    std::stack<Node*> st1;
+    std::stack<Node*> st2;
 
     st1.push(root);
 
@@ -51,12 +49,11 @@ void postOrderIterative(Node* root)
         {
             st1.push(temp->right);
         }
-
     }
 
     while(!st2.empty())
     {
-        cout << st2.top()->data << " ";
+        std::cout << st2.top()->data << " ";
         st2.pop();
     }
 

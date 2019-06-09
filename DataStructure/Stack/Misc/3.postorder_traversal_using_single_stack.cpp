@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
 // A tree node
 class Node
@@ -22,7 +21,7 @@ Node* newNode(int data)
 void postOrderIterative(Node* root)
 {
     Node* current = root;
-    stack<Node*> st;
+    std::stack<Node*> st;
 
     // while current is not null or stack is not empty
     while(current || !st.empty())
@@ -44,14 +43,14 @@ void postOrderIterative(Node* root)
             {
                 temp = st.top();
                 st.pop();
-                cout << temp->data << " ";
+                std::cout << temp->data << " ";
 
                 // printing parents of right subtree
                 while(!st.empty() && temp == st.top()->right)
                 {
                     temp = st.top();
                     st.pop();
-                    cout << temp->data << " ";
+                    std::cout << temp->data << " ";
                 }
             }
 

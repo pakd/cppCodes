@@ -1,15 +1,13 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
-
-int findMaxLen(string str)
+int findMaxLen(std::string str)
 {
     int n = str.length();
 
     int maxLen = -1;
 
-    stack<int> st;
+    std::stack<int> st;
 
     // index where invalid substring ends
     st.push(-1);
@@ -31,7 +29,7 @@ int findMaxLen(string str)
             // lenght of valid substring
             if(!st.empty())
             {
-                maxLen = max(maxLen, i - st.top());
+                maxLen = std::max(maxLen, i - st.top());
             }
 
             // push index where invalid substring ends
@@ -47,11 +45,11 @@ int findMaxLen(string str)
 
 int main()
 {
-    string str = "((()()";
-    cout << findMaxLen(str) << endl;
+    std::string str = "((()()";
+    std::cout << findMaxLen(str) << std::endl;
 
     str = "()(()))))";
-    cout << findMaxLen(str) << endl ;
+    std::cout << findMaxLen(str) << std::endl ;
 
     return 0;
 }

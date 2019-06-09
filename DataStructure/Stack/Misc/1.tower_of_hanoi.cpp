@@ -1,12 +1,12 @@
 #include <iostream>
-using namespace std;
+
 
 // moving disks from src rod to dest rod using aux rod
  void towerOfHanoi(int n, char src, char dest, char aux)
  {
      if( n == 1)
      {
-         cout << "disk 1 moved from " << src << " to " << dest << endl;
+         std::cout << "disk 1 moved from " << src << " to " << dest << std::endl;
          return;
 
      }
@@ -14,7 +14,7 @@ using namespace std;
      // moving n-1 disks from src to aux using dest rod
      towerOfHanoi( n-1, src, aux, dest);
 
-     cout << "disk " << n << " moved from " << src << " to " << dest << endl;
+     std::cout << "disk " << n << " moved from " << src << " to " << dest << std::endl;
 
      // moving n-1 disks from aux to dest using src rod
      towerOfHanoi(n-1, aux , dest, src);

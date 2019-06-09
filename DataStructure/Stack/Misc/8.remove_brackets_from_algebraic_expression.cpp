@@ -1,17 +1,15 @@
 #include <iostream>
 #include <stack>
- using namespace std;
 
-
- string removeBrackets(string str)
+std::string removeBrackets(std::string str)
  {
 
-     string ret = "";
+     std::string ret = "";
      int len = str.length();
 
-     stack<int> st;
+     std::stack<int> st;
 
-     st.push(0);
+     st.push(0); // means +
 
      for(int i=0; i<len; i++)
      {
@@ -70,12 +68,12 @@
  }
  int main()
  {
-     string s1 = "a-(b+c)";
-     cout << removeBrackets(s1) << endl;
+     std::string s1 = "a-(b+c)";
+     std::cout << removeBrackets(s1) << std::endl;
 
 
-     string s2 = "a-(b-c-(d+e))-f";
-     cout << removeBrackets(s2) << endl;
+     std::string s2 = "a-(b-c-(d+e))-f";
+     std::cout << removeBrackets(s2) << std::endl;
 
      return 0;
  }
