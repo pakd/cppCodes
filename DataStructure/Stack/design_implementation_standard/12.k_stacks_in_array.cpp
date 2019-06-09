@@ -1,5 +1,4 @@
 #include <iostream>
-using namespace std;
 
 class kStacks
 {
@@ -38,7 +37,7 @@ public:
     {
         if(free == -1)
         {
-            cout << "stack overflow" << endl;
+            std::cout << "stack overflow" << std::endl;
             return ;
         }
 
@@ -56,7 +55,7 @@ public:
     {
         if(top[stackNo] == -1)
         {
-            cout << "stack underflow" << endl;
+            std::cout << "stack underflow" << std::endl;
             return INT_MAX;
         }
 
@@ -92,9 +91,9 @@ int main()
     ks.push(0, 9);
     ks.push(0, 7);
 
-    cout << "Popped element from stack 2 is " << ks.pop(2) << endl;
-    cout << "Popped element from stack 1 is " << ks.pop(1) << endl;
-    cout << "Popped element from stack 0 is " << ks.pop(0) << endl;
+    std::cout << "Popped element from stack 2 is " << ks.pop(2) << std::endl;
+    std::cout << "Popped element from stack 1 is " << ks.pop(1) << std::endl;
+    std::cout << "Popped element from stack 0 is " << ks.pop(0) << std::endl;
 
     return 0;
 }

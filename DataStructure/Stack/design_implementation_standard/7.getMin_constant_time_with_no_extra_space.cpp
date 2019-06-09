@@ -43,6 +43,7 @@ int getMin()
     return INT_MAX;
 
 }
+
 int main()
 {
     //int arr[] = {10, 20, 30, 5, 50};

@@ -1,10 +1,9 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
 void calculateSpan(int *price , int n, int *S)
 {
-    stack<int> st;
+    std::stack<int> st;
     st.push(0);
     S[0] = 1;
 
@@ -23,7 +22,7 @@ void calculateSpan(int *price , int n, int *S)
 void printArray(int *arr, int n)
 {
     for (int i = 0; i<n; i++)
-        cout << arr[i] << " ";
+        std::cout << arr[i] << " ";
 }
 
 int main()

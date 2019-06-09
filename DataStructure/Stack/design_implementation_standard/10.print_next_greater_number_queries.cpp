@@ -1,10 +1,9 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
 void next_greater(int *arr, int n, int *next)
 {
-    stack<int> st;
+    std::stack<int> st;
 
     st.push(0);
 
@@ -24,20 +23,13 @@ void next_greater(int *arr, int n, int *next)
     }
 }
 
-int countNGEs(int *arr, int *next, int *dp, int n)
+int answer_query(int *arr, int *next, int index)
 {
-    dp[n-1] = 0; // this won't trigger anytime as next[n-1] is always -1.
-    for(int i= n - 2; i >=0 ; i--)
+    if(next[index]!=-1)
     {
-        if(next[i] == -1)
-        {
-            dp[i] = 0;
-        }
-        else
-        {
-            dp[i] = 1 + dp[next[i]];
-        }
+        return arr[next[index]];
     }
+    return -1;
 }
 
 int main()
@@ -50,18 +42,14 @@ int main()
 
     next_greater(arr, size , next);
 
-    int *dp = new int[size];
-
-    countNGEs(arr, next, dp, size);
-
     // query 1 answered
-    cout << dp[3] << endl;
+    std::cout << answer_query(arr, next, 3) << std::endl;
 
     // query 2 answered
-    cout << dp[6] << endl;
+    std::cout << answer_query(arr, next, 6) << std::endl;
 
     // query 3 answered
-    cout << dp[1] << endl;
+    std::cout << answer_query(arr, next, 1) << std::endl;
 
     return 0;
 }

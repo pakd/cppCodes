@@ -1,12 +1,12 @@
 #include <iostream>
 #include <stack>
 #include <unordered_map>
-using namespace std;
+
 
 void next_greater(int *arr, int n, int *next)
 {
-    stack<int> st;
-    unordered_map<int, int> m;
+    std::stack<int> st;
+    std::unordered_map<int, int> m;
 
     for(int i=0;i<n;i++)
     {
@@ -37,7 +37,7 @@ int printNextArray( int *next, int n)
 {
     for(int i=0; i < n; i++)
     {
-        cout << next[i] << " ";
+        std::cout << next[i] << " ";
     }
 }
 
