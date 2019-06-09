@@ -1,13 +1,12 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
-string decode(string input)
+std::string decode(std::string input)
 {
-    string ret = "";
+    std::string ret = "";
 
-    stack<int> intSt;
-    stack<char> charSt;
+    std::stack<int> intSt;
+    std::stack<char> charSt;
 
     int len = input.length();
 
@@ -27,7 +26,7 @@ string decode(string input)
 
         else if(t == ']')
         {
-            string temp = "";
+            std::string temp = "";
             while(charSt.top() != '[')
             {
                 temp += charSt.top();
@@ -52,8 +51,6 @@ string decode(string input)
         }
     }
 
-
-
     while(!charSt.empty())
     {
         ret = charSt.top() + ret;
@@ -64,15 +61,13 @@ string decode(string input)
 
 }
 
-
-
 int main()
 {
-    string str = "3[b2[ca]]";
-    cout << decode(str) << endl;
+    std::string str = "3[b2[ca]]";
+    std::cout << decode(str) << std::endl;
 
-    string str2 = "2[a2[b]]";
-    cout << decode(str2) << endl;
+    std::string str2 = "2[a2[b]]";
+    std::cout << decode(str2) << std::endl;
 
     return 0;
 }

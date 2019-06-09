@@ -1,6 +1,5 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
 int isMatching(char a, char b)
 {
@@ -13,7 +12,7 @@ int isMatching(char a, char b)
 }
 
 // recursive function for checking balanced expression
-bool isBalanced(string input, stack<char> st, int index )
+bool isBalanced(std::string input, std::stack<char> st, int index )
 {
     if(index == input.length())
     {
@@ -27,7 +26,6 @@ bool isBalanced(string input, stack<char> st, int index )
         st.push(t);
         return isBalanced(input, st, index + 1);
     }
-
 
     // case 2 : pop case, if st.top() == 'X' or matching bracket
     // assume 'X' as opening bracket and move to next index
@@ -57,7 +55,7 @@ bool isBalanced(string input, stack<char> st, int index )
     {
         // treat 'X' as opening bracket, push to st and call recursion
         // copy stack
-        stack<char> tmp = st;
+        std::stack<char> tmp = st;
         tmp.push(t);
         bool res = isBalanced(input, tmp, index + 1);
 
@@ -86,17 +84,15 @@ bool isBalanced(string input, stack<char> st, int index )
 int main()
 {
 
-    string s = "{(X}[]"; // balanced
+    std::string s = "{(X}[]"; // balanced
 
     // string s = "[{X}(X)]"; // not balanced
 
-
-    stack<char> ele;
+    std::stack<char> ele;
     if (isBalanced(s, ele, 0))
-        cout << "Balanced";
+        std::cout << "Balanced";
     else
-        cout << "Not Balanced";
-
+        std::cout << "Not Balanced";
 
     return 0;
 }

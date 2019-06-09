@@ -1,10 +1,9 @@
 #include <iostream>
 #include <stack>
-using namespace std;
 
 void findRightSmaller(int *arr, int n, int *rightSmaller)
 {
-    stack<int> st;
+    std::stack<int> st;
     for(int i=0; i<n; i++)
     {
         while(!st.empty() && arr[st.top()] > arr[i])
@@ -27,7 +26,7 @@ void findRightSmaller(int *arr, int n, int *rightSmaller)
 
 void findLeftSmaller(int *arr, int n, int *leftSmaller)
 {
-    stack<int> st;
+    std::stack<int> st;
     for(int i=n-1; i>=0; i--)
     {
         while(!st.empty() && arr[st.top()] > arr[i])
@@ -56,28 +55,28 @@ int findMaxDiff(int *arr, int n)
 
     findRightSmaller(arr, n, rightSmaller);
 
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
-        cout << rightSmaller[i] << " ";
+        std::cout << rightSmaller[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
     int *leftSmaller = new int[n];
 
     findLeftSmaller(arr, n, leftSmaller);
 
-    for(int i=0;i<n;i++)
+    for(int i=0; i<n; i++)
     {
-        cout << leftSmaller[i] << " ";
+        std::cout << leftSmaller[i] << " ";
     }
-    cout << endl;
+    std::cout << std::endl;
 
 
     int maxDiff  = 0;
 
     for(int i=0; i<n; i++)
     {
-       maxDiff = max(maxDiff, abs(leftSmaller[i] - rightSmaller[i]));
+        maxDiff = std::max(maxDiff, abs(leftSmaller[i] - rightSmaller[i]));
     }
 
     return maxDiff;
@@ -88,7 +87,7 @@ int main()
 {
     int arr[] = {2, 4, 8, 7, 7, 9, 3};
     int n = sizeof(arr)/sizeof(arr[0]);
-    cout << "Maximum diff :  "
-         << findMaxDiff(arr, n) << endl;
+    std::cout << "Maximum diff :  "
+              << findMaxDiff(arr, n) << std::endl;
     return 0;
 }

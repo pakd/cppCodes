@@ -1,11 +1,9 @@
 #include <iostream>
 #include <stack>
-using namespace std;
-
 
 int getMaxArea(int *hist, int n)
 {
-    stack<int> st;
+    std::stack<int> st;
 
     int max_area = 0;
     int curr_area = 0;
@@ -28,7 +26,7 @@ int getMaxArea(int *hist, int n)
 
             curr_area = hist[top] * ( (st.empty())? i: i - st.top() - 1);
 
-            max_area = max(max_area, curr_area);
+            max_area = std::max(max_area, curr_area);
         }
     }
 
@@ -40,7 +38,7 @@ int getMaxArea(int *hist, int n)
 
         curr_area = hist[top] * ((st.empty())? i: i - st.top() - 1);
 
-        max_area = max(max_area, curr_area);
+        max_area = std::max(max_area, curr_area);
     }
 
     return max_area;
@@ -50,6 +48,6 @@ int main()
 {
     int hist[] = {6, 2, 5, 4, 5, 1, 6};
     int n = sizeof(hist)/sizeof(hist[0]);
-    cout << "Maximum area is " << getMaxArea(hist, n);
+    std::cout << "Maximum area is " << getMaxArea(hist, n);
     return 0;
 }
