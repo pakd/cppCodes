@@ -42,6 +42,12 @@ int maxProfit(int *price, int n, int k)
         }
     }
 
+    for(int i=0; i<=k; i++) {
+        for(int j=0; j<n; j++) {
+            cout << profit[i][j] << " ";
+        }
+        cout << endl;
+    }
     return profit[k][n-1];
 }
 
