@@ -57,4 +57,5 @@
 * [Types of binary tree](https://www.geeksforgeeks.org/binary-tree-set-3-types-of-binary-tree/)
 * [Serialization and Deserialization](https://www.geeksforgeeks.org/serialize-deserialize-binary-tree/)
 * [No of BT and BST Possible with n distinct nodes](https://www.geeksforgeeks.org/total-number-of-possible-binary-search-trees-with-n-keys/)
+* [No of BST possible with n distinct nodes video](https://www.youtube.com/watch?v=YDf982Lb84o)
 
