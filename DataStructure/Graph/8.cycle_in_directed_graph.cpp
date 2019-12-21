@@ -45,7 +45,7 @@ public:
             // check for further descendants
             else if(Color[i] == White && isCycleDFS(i, Color))
             {
-                return false;
+                return true;
             }
         }
 
